@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Brussels's B'cycle: Bicycle rentals in Brussels</title>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	</head>
+
+	<body>
+    	<div class="bloc_page"> 
+			<header>
+				<div id="logohead">
+				    <img src="carte_images/logo/logo.png" alt="LOGO DE B'CYCLE"><i class="fas fa-map-marker-alt"></i>
+				</div>
+				<div class="slogan">
+					<p>
+						Rent a B'cycle, Bike the city
+					</p>
+				</div>
+			</header>
+			<hr>
+			 <!--  <section id="second_header">
+	                <figure>
+				    	<img class="banner" src="carte_images/slider/b'cyclebanner.jpg" alt=“velos”>
+						<figcaption class="slogan_caption"> 
+	 						<div class="caption"> 
+
+	                        	<h1>
+	                                B'CYCLE - PEDAL THROUGH THE CITY!
+	                            </h1>
+	                        </div>
+	                    </figcaption>
+	                </figure>
+	             </section> -->
+
+		<!--SLIDER DIAPORAMA-->
+	 
+			<section id="introduction">
+				<div class="introduction_title"> 
+	  				<h1>HOW B'CYCLE WORKS</h1>
+	  				<div class="introduction_line"></div>
+	  			</div>
+	 			
+	 			<div class="slideshow-container">
+
+					<a class="previous">
+	               		<i class="fas fa-chevron-left"></i>
+	                </a>	
+	                  		<div class="active"> 
+		                		<img src="carte_images/slider/bike1.jpg" alt=“velos”/>
+		                		<figcaption>
+			                	<h3>1 - Sélectionnez une zone</h3>
+			                	<p class="c_text">Cliquez ou zoomez sur le marqueur indiquant la zone où vous souhaitez louer votre vélo</p>
+			                	</figcaption>
+							</div>
+
+
+				    	 
+	 					<div class="sliderimages">
+	 						<img src="carte_images/slider/bike2.jpg" alt=“velos”>
+	 						<figcaption>
+	                		<h3>2 - Sélectionnez une zone</h3>
+							<p class="c_text">Cliquez ou zoomez sur le marqueur indiquant la zone où vous souhaitez louer votre vélo</p>
+							</figcaption>
+						</div>
+
+				        
+						<div class="sliderimages">
+							<img src="carte_images/slider/bike3.jpg" alt=“velos”>
+
+								<figcaption> 
+			            		<h3>3 - Sélectionnez une zone</h3>
+								<p class="c_text">Cliquez ou zoomez sur le marqueur indiquant la zone où vous souhaitez louer votre vélo</p>
+								</figcaption>
+						</div>
+
+			        	
+						<div class="sliderimages">
+							<img src="carte_images/slider/bike4.jpg" alt=“velos”>
+								<figcaption>
+			            		<h3>4 - Sélectionnez une zone</h3>
+								<p class="c_text">Cliquez ou zoomez sur le marqueur indiquant la zone où vous souhaitez louer votre vélo</p>
+								</figcaption>
+						</div>
+	                	<a class="next"><i class="fas fa-chevron-right"></i></a>
+				</div>
+	 		</section>
+
+			<!--  MAP  AND INFORMATIOn -->
+
+
+			<!-- INTRO TEXT --> 
+
+
+			<section id="velos_map">
+ 				<div class="introduction_title"> 
+	  				<h1>Map and stations</h1>
+	  				<div class="introduction_line"></div>
+	  				<h2 class="map_head_text">353 B'cycle stations available 24/7, just hop on!</h2>
+	  			</div>
+	  			 
+
+	  			 <!-- MAP -->
+	  			<div class="map_info"> 
+
+					<div class="map">
+						
+					 <div id="map"></div>
+					</div>
+				
+
+						<!-- INFORMATION -->
+					<aside class="station_velo">
+	            		<table class="table_">
+		                	<thead>
+			                    <tr>
+			                        <th colspan="2" class="table_Title">BIKE STATION INFORMATION</th>
+			                    </tr>
+			                </thead>
+			                <tbody>
+			                  
+			                    <tr>
+			                        <td>Address</td>
+			                        <td id="address"></td>
+			                    </tr>
+			                    <tr>
+			                        <td>Available Bike stands</td>
+			                        <td id="available_bike_stands"></td>
+			                    </tr>  
+			                    <tr>
+			                        <td>Available bikes</td>
+			                        <td id="available_bikes"></td>
+			                    </tr>
+
+			                </tbody>  
+
+			            </table>
+		      
+
+		           		
+			            <section class="instructions">
+			            	<div id="button">
+			                	<form id="signup_form">
+			                    	<div class="informations">
+				                        <span>NAME:</span>
+				                        <input id="first_name" type="text" name="fname"/>
+				                        <div class="text_error_fname">This field is required</div><br>
+				                        <span>SURNAME:</span>
+				                        <input id="last_name" type="text" name="lname"/><br>
+				                        <div class="text_error_lname">This field is required</div>
+				                    </div>
+			                   		<button type="button" id="buttonReserv">Reserve</button>
+			                	</form>
+			            	</div>
+			            </section>
+
+			            <canvas id="canvas">
+		            
+			            </canvas>
+	        		</aside>
+			    </div>
+		
+	        </section>
+
+    
+				   
+
+
+			 
+
+
+
+				 
+			
+
+	 
+			<!--FORM-->		
+	 		<script type="text/javascript"></script>
+			<script src="https://code.jquery.com/jquery-3.5.0.js""></script>
+			<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+			<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+			<link href='file:///Users/Jo/Documents/project_3_carte/index.css' rel='stylesheet' />
+
+			<script src="file:///Users/Jo/Documents/project_3_carte/index.js""></script>
+		</div>
+	</body>
+</html>
+
+
+
