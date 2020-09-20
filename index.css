@@ -1,4 +1,9 @@
+    
 
+body
+{
+	background-color: ;
+}
 .bloc_page
 {
  margin: auto;
@@ -7,16 +12,25 @@
 
 /*HEADER*/
 
+#logohead{
 
-#logohead
-{
-    width: 26%;
-    /* text-align: center; */
-    margin-left: 37%;
+text-align: center;
 }
-header
+
+
+#logohead img {
+width: auto;
+margin-top: 5px;
+margin-bottom: 8px;
+}
+
+.slogan p {
+ font-size: 42px;
+ margin: 3px;
+ text-align: center;
+}
+header 
 {
-	text-align: center;
 	background-color: #ffffff;
     position: fixed;
     z-index: 20;
@@ -25,13 +39,16 @@ header
     height: auto;
     border-bottom: 1px solid #e5e5e5;
 }
-	
+
+	*/
 #second_header
 {
  	padding-top: 136px;
 }
-#introduction{
-	    padding-top: 11%;
+
+ #introduction
+{
+    display:none;
 }
 .caption
 {
@@ -45,19 +62,40 @@ header
     text-shadow: 2px 2px 8px #fff;
 }
 
-.introduction_title{
-	text-align: center;
-    padding-top: 10px;
+
+.introduction_title {
+   text-align: center;
+    color: #ffe05f;
+}
+    /* background-color: #94cee4; */
+    /* border-radius: 36px; */
+    /* border: 1px; */
+    /* margin: 8px; */
+    /* font-size: 17px; */
+    /*margin-top: 18%;
+
+
+}
+#introduction h1
+{
+    background-color: #5ca6b0;
+    padding: 15px;
+    color: #ffe05f;
+
 }
 
-.introduction_line
+
+
+
+/*.introduction_line
 {
     width: 15%;
     border-bottom: 2px solid teal;
     display: inline-block;
     vertical-align: middle;
     height: 0px;
- }
+ }*/
+
 #slogan
 {
 	margin-top: 0px;
@@ -70,16 +108,14 @@ header
 
  
 /*IMAGE SLIDER WITH CAPTION*/
-img 
+img
 {
 	vertical-align: middle;
 	width: 100%; 
 }
 
-figcaption{
-    padding-top: 27%;
-}
-.sliderimages {
+
+.inactive {
 	display: none;
 }
 
@@ -89,7 +125,7 @@ figcaption{
     font-size: 20px; 
     color: #e0e0e0;
     margin: 0px;
-    background-color: teal;
+    background-color:#545a5a;
    
 }
 .slideshow-container h3
@@ -98,7 +134,8 @@ figcaption{
     line-height: 37px;
 }}
  
-.mySlides1
+.mySlides1, .pause_play
+
 {
 	display: block; 
 }
@@ -106,15 +143,27 @@ figcaption{
 
 /* Slideshow container */
 
-.slideshow-container 
+.slideshow-container   
 {
   position: relative;
   margin: auto;
-  box-sizing: border-box;
-  border: 3px solid teal;
-  background-color: #f1f0f0;
-  column-count: 2;
 
+}
+.sliderimages {
+    background-color:#0080802b;;
+    margin: 21px;
+
+}
+
+.sliderimages img
+
+{
+	  width: 100%;
+}
+
+.previous, .next
+{
+	display:none;
 }
 /*.active, .sliderimages
 {
@@ -123,36 +172,11 @@ figcaption{
 
 }	
 */
+/* Next & previous buttons 
+
 
  /* Position the "next button" to the right */
-.next 
-{
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
 
-/* On hover, add a grey background color */
-.previous:hover, .next:hover {
-  background-color: #f1f1f1;
-  color: black;
-}
-/* Next & previous buttons */
-.previous, .next 
-{
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  background-color: black;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
 
 /*
 /* Caption text 
@@ -196,20 +220,27 @@ figcaption{
 			/*MAP*/
 
 #velos_map{
-	    background-color: #e7f2f3;
-
-}
-#map 
-{
-    position: relative ;
-   height: 400px;  
-   width: 100% ; 
+	     
+	background-color: #0d8392b8;
+    color: #0e0606;
+ 
  }
+
+ #map{
+     position: relative;
+ 
+    height: 672px;
+    width: 100%;}
+
 .map{
-	width: 60%;
-	    border: 1px solid teal;
+	width: 100%;
+	border: 1px solid teal;
 }
 
+.map_head_text
+{
+	text-align: center;
+}
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -224,17 +255,15 @@ figcaption{
 
 
 /*TABLE FOR MAP INFO*/
-aside 
-{
-	margin-left:18px;
-    background-color: white;
+
+
+aside {
+    /* margin-left: 18px; */
     border-collapse: collapse;
-    border: 1px solid teal;
-    padding: 10px;
-    width: 40%;
-
-
-}
+    /* padding: 10px; */
+     border: 1px solid teal;
+	margin: 30px;
+    box-shadow: 4px 10px #888888;}
 
 .table_ 
 {
@@ -242,11 +271,19 @@ aside
          	width: 100%;
     
 }
-.map_info
-{
+
+.map_info {
     width: 100%;
-    display: flex;
-         align-items:center;
+    /* display: flex; */
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
+
+.mapboxgl-canvas
+
+{
+
 }
 #maptable {
     display: flex;
@@ -254,20 +291,21 @@ aside
     margin: 0px;
     padding: 20px;
 }
-.table_Title {
-    font-size: 25px;
-    padding: 10px;
-    background-color: white;
-}
-.table_
+
+.table_Title 
 {
-	
-}
-td {
-      height: 50px;
-      font-size: 15px;
-    
-}
+    font-size: 55px;
+    padding: 10px;
+    background-color: #5ca6b0;
+    color: #edd968;
+    border-bottom: solid;}
+ 
+ td {
+    height: 108px;
+    font-size: 37px;
+    width: 33%;
+    }
+
 .table tr td:first-child
 { 
 	padding: 10px; 
@@ -276,7 +314,8 @@ td {
 tr:nth-child(odd) td 
 {
    
-   background-color: rgba(6, 152, 158, 0.31);    
+    background-color: rgb(92 166 176);
+   
 }
 
 
@@ -284,50 +323,99 @@ tr {
     width: 20px;
 }
 /* CANVAS */
-#canvas {
+.canvas_info
+{
+	display: none;
+
+ }
+
+ #buttonsave, #buttonclear{
+ 	display: none; 
+ 	width: 24%;
+    height: 39px;
+    border-radius: 15px;
+    background-color: teal;    
+    color: white;
+    font-size: 17px;
+  }
+  #buttonsave,#buttonclear :hover{
+  	 background-color: white;
+  	 color: black;
+  	 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+
+#canvas 
+{
     background-color: #fdfbff;
     border: 1px solid black;
     box-shadow: 5px 5px 0 0 #80808040;
-    width: 300px;
-    height: 150px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     display: none;
+
     
 }
 .instructions {
-    color: teal;
-}
-/*.informations {
-    
-    text-align: center;
-    
-}*/
-.informations input{
-    margin: 14px;
-    height: 20px;
-    width: 136px;
+color: #151010;
+padding-bottom: 8px;
+padding-top: 10px;
+
 }
 
+.informations input 
+{
+    margin: 14px;
+    height: 36px;
+    width: 159px;
+    font-size: 37px;
+}
+
+.informations {
+  font-size: 37px;
+
+ padding-bottom: 40px;
+ }
 #form{
     display: block;
 }
-  button{
-  	     width: 34%;
+ 
+#signup_form
+{
+   	background-color: #fee05d;
+}
+
+
+#buttonReserv 
+{
+  	width: 34%;
     height: 39px;
     border-radius: 15px;
     background-color: teal;    
     color: white;
     font-size: 20px;
-
-  
 }
-  button:hover{
-  	 background-color: white;
-  	 color: black;
-  	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  }
+
+#bicyleInfo
+{
+	display: none;
+     background-color: #008080b5;
+     border-radius: 17px;
+    text-align: center;
+    align-items: center;
+}
+#bicyleInfo h2{
+ margin: 0px;
+
+}
+#buttonReserv:hover
+{
+	background-color: white;
+	color: black;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: all 0.3s ease;
+}
 
  .text_error_fname
  {
@@ -342,8 +430,203 @@ tr {
  .text_error_visible
  {
  	display: block;
+ 	color: red;
   }
+.alert_info
+{
+	color:#caca19;
+}
 
 
+footer
+{
+ 	background-color: #585757;
+    color: white;
+    padding:7px;
+    text-align: center;
+}
+#cookie-banner
+{
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
 
- 
+
+/* ---------------------------------------- */
+/* ==     MEDIA Q's                       */
+/*---------------------------------------- */
+/* tablet (portrait and landscape) ----------- */
+/* media queries for screens with a width greater then 768 pixels (tablet) */
+/* min-width:768 => iPad, max-width:1024=>iPad Pro */
+
+
+/*IPAD */
+
+@media screen and (min-width:1200px)
+
+{
+
+/*DESKTOP*/
+
+
+/*HEADER*/
+
+	#logohead  
+	{
+         width: 100%;
+    height: auto;
+    /* margin-left: 37%; */
+   
+	}
+	
+	#logohead img 
+	{
+	vertical-align: middle;
+    width: 72%;
+	}
+
+	header  
+	{    
+   
+    background-color: #f7f7f7;  
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #e5e5e5;
+	}
+	#logohead img  
+	{
+  	width: auto;
+  	    width: 23%;
+	} 
+	.sublogo
+	{
+	width: 100%;
+    height: auto;
+	}
+
+
+	.slogan p {
+    font-size: 22px;
+    margin: 3px;
+    text-align: center;
+	}
+
+	 #introduction{
+	padding-top: 6%;
+    background-color: #f7f7f7;
+    display:block;
+	}
+	.slideshow-container   
+	{
+	position: relative;
+	margin: auto;
+	column-count: 2;
+	}
+	/*Next & previous buttons */
+	.previous, .next   
+	{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+  	width: auto;
+  	padding: 16px;
+  	margin-top: -22px;
+  	color: white;
+ 	background-color: black;
+ 	 font-weight: bold;
+  	font-size: 18px;
+  	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+  	user-select: none;
+	}
+
+	*figcaption {
+    padding-top: 27%;
+     width: 85%;
+
+	}
+
+	.pause_play
+	{
+	font-size: 30px;
+	}
+
+	.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+	}
+
+	/*On hover, add a grey background color */
+	.previous:hover, .next:hover 
+	{
+ 	background-color: #fee05d;
+	color: black;
+	}
+	/* Next & previous buttons mobile */
+	.previous, .next   
+	{
+	display: block;
+	}
+
+
+	.map{
+	width: 60%;
+	border: 1px solid teal;
+	}
+
+ 	#map 
+	{
+    position: relative ;
+   height: 400px;  
+   width: 100% ; 
+
+ 	}
+	.map_info
+	{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+	}
+
+	aside 
+	{
+	margin-left:18px;
+    border-collapse: collapse;
+ 	padding: 10px;
+    width: 40%;
+    border: 19px solid teal;
+    margin-top: 50px;
+    border-radius: 30px;
+	}
+
+	td 
+	{
+    height: 50px;
+    font-size: 16px;
+    width: 33%
+    
+	}
+
+	.informations input 
+{
+    margin: 14px;
+    height: 36px;
+    width: 159px;
+    font-size: 23px;
+}
+
+
