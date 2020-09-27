@@ -1,0 +1,566 @@
+
+
+/*---------------------------------------- */
+/* ==              FONTS          */
+/*---------------------------------------- */
+
+body {
+    width: 100%;
+    margin: 0px;
+}
+
+.bloc_page {
+	margin: auto;
+	width: 100%;
+}
+ 
+/* ---------------------------------------- */
+/* ==              HEADER               */
+/*---------------------------------------- */
+ 
+
+    /*     LOGO     */
+
+#logohead {
+	text-align: center;
+}
+
+#logohead img {
+	width: auto;
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+
+header {
+	background-color: #ffffff;
+	position: fixed;
+	z-index: 20;
+	top: 0;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+/*     slogan      */
+.slogan p {
+	font-size: 42px;
+	margin: 3px;
+	text-align: center;
+}
+#slogan {
+	margin-top: 0px;
+	width: 100%;
+	color: #1b1919;
+	text-align: left;
+	padding-top: 0px;
+}
+
+
+
+/* ---------------------------------------- */
+/* ==       SECTION  	01			        */
+/*---------------------------------------- */
+/*    second      */
+
+#second_header {
+	padding-top: 136px;
+}
+
+ #introduction {
+	display: none;
+}
+
+.caption {
+ 	position: absolute;
+	text-align: center;
+	font-size: 25px;
+	top: 50%;
+	left: 25%;
+	color: #fff;
+	text-shadow: 2px 2px 8px #fff;
+}
+
+.introduction_title {
+	text-align: center;
+	color: #ffe05f;
+}
+
+.introduction_title h1{
+    color: black;
+    text-decoration: underline;
+
+} 
+
+/*IMAGE SLIDER WITH CAPTION*/
+
+img {
+	vertical-align: middle;
+	width: 100%;
+}
+
+.inactive {
+	display: none;
+}
+
+.slideshow-container h3,.c_text {
+	font-size: 20px;
+ 	margin: 0px;
+ 	    background-color: #fee274;
+ }
+
+.slideshow-container h3 {
+	padding-bottom: 4px;
+	line-height: 37px;
+}
+
+.mySlides1, .pause_play {
+	display: block;
+}
+
+
+/* SLIDE SHOW CONTAINER */
+
+.slideshow-container {
+	position: relative;
+	margin: auto;
+}
+
+.sliderimages {
+	 
+    margin: 21px;
+}
+
+.sliderimages img {
+	width: 100%;
+}
+
+.previous, .next {
+	display: none;
+}
+
+
+/* SECTION MAP*/
+
+#velos_map {
+	background-color: #0d8392b8;
+	color: #0e0606;
+}
+
+#map {
+	position: relative;
+	height: 672px;
+	width: 100%;
+}
+
+.map {
+	width: 100%;
+	border: 1px solid teal;
+}
+
+.map_head_text {
+	text-align: center;
+}
+
+.mapboxgl-popup-content {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#available_bike_stands #available_bikes #status #address #name {
+	border: 1px solid;
+	width: 50px;
+	height: 60px;
+}
+
+
+		/*TABLE FOR MAP INFO*/
+
+
+aside {
+     
+	border-collapse: collapse;
+	border: 1px solid teal;
+	margin: 30px;
+	box-shadow: 4px 10px #888888;
+}
+
+.table_ {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.map_info {
+	width: 100%;
+ 	align-items: center;
+	background-color: #f7f7f7;
+}
+
+.mapboxgl-canvas {
+}
+
+#maptable {
+	display: flex;
+	background-color: #e2e2e2;
+	margin: 0px;
+	padding: 20px;
+}
+
+.table_Title {
+	font-size: 55px;
+	padding: 10px;
+	background-color: #fee274;
+	color: #1b1a13;
+	border-bottom: solid;
+}
+
+td {
+	height: 108px;
+	font-size: 37px;
+	width: 33%;
+}
+
+.table tr td:first-child {
+	padding: 10px;
+}
+
+tr:nth-child(odd) td {
+	background-color: rgb(92 166 176);
+}
+
+tr {
+	width: 20px;
+}
+
+ /* ---------------------------------------- */
+ /* ==             CANVA                    */
+ /*---------------------------------------- */
+.canvas_info {
+	display: none;
+}
+
+#buttonsave, #buttonclear {
+	display: none;
+	width: 24%;
+	height: 39px;
+	border-radius: 15px;
+	background-color: teal;
+	color: white;
+	font-size: 17px;
+}
+
+#buttonsave,#buttonclear :hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#canvas {
+	background-color: #fdfbff;
+	border: 1px solid black;
+	box-shadow: 5px 5px 0 0 #80808040;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+	width: 150px;
+	height: 150px;
+}
+
+.instructions {
+	color: #151010;
+	padding-bottom: 8px;
+	padding-top: 10px;
+}
+
+.informations input {
+	margin: 14px;
+	height: 36px;
+	width: 159px;
+	font-size: 37px;
+}
+
+.informations {
+	font-size: 37px;
+	padding-bottom: 40px;
+}
+
+#form {
+	display: block;
+}
+
+#signup_form {
+	background-color: #fee05d;
+}
+
+#buttonReserv {
+	width: 34%;
+	height: 39px;
+	border-radius: 15px;
+	background-color: teal;
+	color: white;
+	font-size: 20px;
+}
+
+#bicyleInfo {
+	display: none;
+	background-color: #008080b5;
+	border-radius: 17px;
+	text-align: center;
+	align-items: center;
+}
+#buttonReserv:hover {
+	background-color: white;
+	color: black;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: all 0.3s ease;
+}
+
+#bicyleInfo h2 {
+	margin: 0px;
+}
+
+
+
+.text_error_fname {
+	display: none;
+}
+
+.text_error_lname {
+	display: none;
+}
+
+.text_error_visible {
+	display: block;
+	color: red;
+}
+
+.alert_info {
+	color: #caca19;
+}
+
+ /* ---------------------------------------- */
+ /* ==             FOOTER                    */
+ /*---------------------------------------- */
+
+footer {
+	background-color: #585757;
+	color: white;
+	padding: 7px;
+	text-align: center;
+}
+
+#cookie-banner {
+	position: fixed;
+	bottom: 40px;
+	left: 10%;
+	right: 10%;
+	width: 80%;
+	padding: 5px 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #eee;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ---------------------------------------- */
+/* ==     MEDIA Q's                       */
+/*---------------------------------------- */
+/* tablet (portrait and landscape) ----------- */
+/* media queries for screens with a width greater then 768 pixels (tablet) */
+/* min-width:768 => iPad, max-width:1024=>iPad Pro */
+
+
+/*IPAD */
+
+@media screen and (min-width:1200px)
+
+{
+
+/*DESKTOP*/
+
+
+/*HEADER*/
+
+	#logohead  
+	{
+         width: 100%;
+    height: auto;
+    /* margin-left: 37%; */
+   
+	}
+	
+	#logohead img 
+	{
+	vertical-align: middle;
+    width: 72%;
+	}
+
+	header  
+	{    
+   
+    background-color: #f7f7f7;  
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #e5e5e5;
+	}
+	#logohead img  
+	{
+  	width: auto;
+  	    width: 23%;
+	} 
+
+
+
+	/*BODY */
+
+	.sublogo
+	{
+	width: 100%;
+    height: auto;
+	}
+
+
+	.slogan p {
+    font-size: 22px;
+    margin: 3px;
+    text-align: center;
+	}
+
+	 #introduction{
+	padding-top: 6%;
+    background-color: #f7f7f7;
+    display:block;
+	}
+
+
+
+	/*SLIDER */
+
+	.slideshow-container   
+	{
+	position: relative;
+	margin: auto;
+	column-count: 2;
+ 	background-color: #9ab9b952;
+	}
+
+
+	/*Next & previous buttons */
+	.previous, .next   
+	{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+  	width: auto;
+  	padding: 16px;
+  	margin-top: -22px;
+  	color: white;
+ 	background-color: black;
+ 	 font-weight: bold;
+  	font-size: 18px;
+  	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+  	user-select: none;
+	}
+
+	figcaption {
+    padding-top: 27%;
+     width: 85%;
+
+	}
+
+	.pause_play
+	{
+	font-size: 30px;
+    padding: 22px;
+    width: 100%;
+    height: 33px;
+     align-items: center;
+ 	}
+	.fas:hover {
+  color: #06979e;
+
+	}
+	.next 
+	{
+	right: 0;
+	border-radius: 3px 0 0 3px;
+	}
+
+	/*On hover, add a grey background color */
+	.previous:hover, .next:hover
+	{
+ 	background-color: #fee05d;
+	color: black;
+	}
+	/* Next & previous buttons mobile */
+	.previous, .next   
+	{
+	display: block;
+	}
+
+
+	.map{
+	width: 60%;
+	border: 1px solid teal;
+	}
+
+ 	#map 
+	{
+    position: relative ;
+   height: 400px;  
+   width: 100% ; 
+
+ 	}
+	.map_info
+	{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+	}
+
+	aside 
+	{
+	margin-left:18px;
+    border-collapse: collapse;
+ 	padding: 10px;
+    width: 40%;
+    border: 3px solid teal;
+    margin-top: 50px;
+    border-radius: 30px;
+	}
+
+	td 
+	{
+    height: 50px;
+    font-size: 16px;
+    width: 33%
+    
+	}
+ 	.informations
+ 	{
+ 	    font-size: 14px
+ 	}
+
+	.informations input 
+	{
+   	margin: 7px;
+    height: 21px;
+    width: 145px;
+    font-size: 17px;
+	}
+
+	.table_Title 
+	{
+    
+    font-size: 26px;
+
+	}
+}
