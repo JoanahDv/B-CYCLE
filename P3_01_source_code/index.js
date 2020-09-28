@@ -218,6 +218,7 @@ $("#canvas").on("mousedown", function(e) { //canvas.addEventListener('mousedown'
     y = e.offsetY;
     isDrawing = true;
 });
+
 $("#canvas").on("mousemove", function(e) {
     if(isDrawing === true) {
         drawLine(context, x, y, e.offsetX, e.offsetY);
