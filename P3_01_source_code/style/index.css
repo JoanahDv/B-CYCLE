@@ -393,8 +393,9 @@ footer {
 /*DESKTOP*/
 
 
-/*HEADER*/
-
+/* ---------------------------------------- */
+/* ==              HEADER               */
+/*---------------------------------------- */
 	#logohead  
 	{
     width: 20%;
@@ -423,10 +424,6 @@ footer {
 	}
  
 
-
-
-	/*BODY */
-
 	.sublogo
 	{
 	width: 100%;
@@ -452,8 +449,9 @@ footer {
 }
 
 
-
-	/*SLIDER */
+/* ---------------------------------------- */
+/* ==           SLIDER IMAGES               */
+/*---------------------------------------- */
 
 	.slideshow-container   
 	{
@@ -465,6 +463,7 @@ footer {
 
 
 	/*Next & previous buttons */
+	
 	.previous, .next   
 	{
 	cursor: pointer;
@@ -518,9 +517,11 @@ footer {
 	display: block;
 	}
 
-
+ /* ---------------------------------------- */
+/* ==              Map               */
+/*---------------------------------------- */
 	.map{
-	width: 60%;
+	width: 60%; /* maps too large */
 	border: 2px solid teal;
 	}
 

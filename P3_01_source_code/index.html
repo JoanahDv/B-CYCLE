@@ -2,33 +2,26 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Rent a B'cycle in the city of Brussels ">
 	<title>Brussels's B'cycle:Bicycle rentals in Brussels</title>
-
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
+	<!-- MAIN STYLYSHEET-->
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> 
+	<link href='style/index.css' rel='stylesheet' />
 
-
-     <!-- MAIN STYLYSHEET-->
-
-
-   <link href='style/index.css' rel='stylesheet' />
-
-   <!--FONTS -->
-
-  	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-
-
-</head>
-
-
+	<!--FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> </head>
 
 <body>
 	<div class="bloc_page">
+
+
+           <!--  HEADER -->          
+
 		<header>
 			<div id="logohead"> <img src="carte_images/logo/logo.png" alt="LOGO DE B'CYCLE"> </div>
 			<div class="slogan">
@@ -36,59 +29,61 @@
 			</div>
 		</header>
 		<hr>
+
+		<!--SECION ONE -->
+
+
 		<!--SLIDER DIAPORAMA-->
 		<section id="introduction">
-
 			<div class="sublogo"> <img src="carte_images/sublogo/display.png" alt="display image"> </div>
 			<div class="introduction_title">
 				<h1>HOW B'CYCLE WORKS</h1>
 				<div class="introduction_line"></div>
 			</div>
-
-
-
-			
 			<div class="slideshow-container">
 				<a class="previous"> <i class="fas fa-chevron-left"></i> </a>
 				<figure class="sliderimages active"> <img src="carte_images/slider/diaporama1.png" alt=“velos”/>
 					<figcaption>
 						<h3>1 -PICK A ZONE</h3>
-						<p class="c_text">Pick a zone to chack for available bikes to rent. Enter first name and last name and click on reserve. </p>
+						<p class="c_text">Pick a zone to check for available bikes to rent. Enter first name and last name and click on reserve. </p>
 					</figcaption>
 				</figure>
 				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap2.png" alt="velos" />
 					<figcaption>
 						<h3>2 - SIGNATURE & CONFIRMATION</h3>
-						<p class="c_text">Cliquez ou zoomez sur le marqueur indiquant la zone où vous souhaitez louer votre vélo</p>
+						<p class="c_text"> Click on the white box to sign,press save to cinfirm reservation or cancel to cancel signature and reservation.</p>
 					</figcaption>
 				</figure>
 				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap3.png" alt=“velos”/>
 					<figcaption>
 						<h3>3 - TIMER AFTER RESERVATION</h3>
-						<p class="c_text">Cliquez ou zoomez sur le marqueur indiquant la zone où vous souhaitez louer votre vélo</p>
+						<p class="c_text">Once reservation and confirmation has been done, you can proceed to getting a bicycle for a period of time.</p>
 					</figcaption>
 				</figure> <a class="next"><i class="fas fa-chevron-right"></i></a>
-				<div class="pause_play"> 
-					<i id="pause" class="fas fa-pause-circle"></i> 
-					<i id="play" class="fas fa-play-circle"></i> 
-				</div>
+				<div class="pause_play"> <i id="pause" class="fas fa-pause-circle"></i> <i id="play" class="fas fa-play-circle"></i> </div>
 			</div>
-			<!-- SLIDER MOBILE -->
 		</section>
 
+		<!--SECTION 2-->
 
 		<!--  MAP  AND INFORMATION -->
+
+
 		<!-- INTRO TEXT -->
 		<section id="velos_map">
 			<div class="introduction_title">
 				<h1>Map and stations</h1>
 				<h2>353 B'cycle stations available 24/7, just hop on!</h2> </div>
+
 			<!-- MAP -->
+
 			<div class="map_info">
 				<div class="map">
 					<div id="map"></div>
 				</div>
-				<!-- INFORMATION -->
+
+				<!-- INFORMATION  BOX -->
+
 				<aside class="station_velo">
 					<table class="table_">
 						<thead>
@@ -111,7 +106,6 @@
 							</tr>
 						</tbody>
 					</table>
-
 					<section class="instructions">
 						<div id="button">
 							<form id="signup_form">
@@ -126,9 +120,6 @@
 								<input type="submit" id="buttonReserv" value="Reserve" /> </form>
 						</div>
 					</section>
-
-
-
 					<section>
 						<div class="canvas_info">
 							<h3>please sign here</h3> </div>
@@ -137,22 +128,19 @@
 						<button id="buttonclear">Clear</button>
 						<button id="buttonsave">save</button>
 					</section>
-
-
 				</aside>
 			</div>
-
-
 		</section>
 		<br>
+
+		<!--FOOTER-->
+
 		<footer>
 			<div id="bicyleInfo"> <i class="fas fa-info-circle"></i>
 				<h2>Information on your reseration</h2>
-
 				<div id="timer">
 					<p id="compteur-reservation">Your reservation expires in <span id="minutes"></span>m<span id="seconds"></span>s</p>
-					<input type="reset" id="cancel_it" class="btn" value="Cancel" style=""> 
-				</div>
+					<input type="reset" id="cancel_it" class="btn" value="Cancel" style=""> </div>
 			</div>
 			<div class="footer_info">
 				<div class="alert_info"> <i class="fas fa-info-circle"></i>
@@ -163,10 +151,9 @@
 				<div class="rights">All rights reserved © Joanah G 2020 - Formation Openclassrooms - Développeur Web Junior - Projet n°3 : Concevez une carte interactive de location de vélos </div>
 			</div>
 		</footer>
-
-
+		
 		<!--FORM-->
- 		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
 		<script src="index.js"></script>

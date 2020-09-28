@@ -12,6 +12,7 @@ var map = new mapboxgl.Map({
     center: [4.360625, 50.873156],
     zoom: 10
 });
+
 //MAP MARKER
 map.on('click', function(event) {
     var features = map.queryRenderedFeatures(event.point); // find features at coordinates
