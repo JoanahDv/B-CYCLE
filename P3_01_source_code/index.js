@@ -197,11 +197,16 @@ var isDrawing = false;
 var clearCanvas = document.getElementById('buttonclear');
 var saveCanvas = document.getElementById('buttonsave');
 var hasSigned = false;
-$("#canvas").on("mousedown", function(e) { //canvas.addEventListener('mousedown',e => {
+$("#canvas").on("mousedown",onmousestart)
+$("#canvas").on("touchstart",onmousestart)
+
+
+
+function onmousestart(e) { //canvas.addEventListener('mousedown',e => {
     x = e.offsetX;
     y = e.offsetY;
     isDrawing = true;
-});
+};
 
 $("#canvas").on("mousemove", onmousemove);
 $("#canvas").on("touchmove", onmousemove);
@@ -215,9 +220,9 @@ function onmousemove(e) {
     }
 }
 
-window.addEventListener('mouseup',onmousestart);
-window.addEventListener('touchstart',onmousestart);
-function onmousestart(e) {
+window.addEventListener('mouseup',onmousestop);
+window.addEventListener('touchstop',onmousestop);
+function onmousestop(e) {
     if(isDrawing === true) {
         drawLine(context, x, y, e.offsetX, e.offsetY);
         x = 0;
