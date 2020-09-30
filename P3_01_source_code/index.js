@@ -44,23 +44,6 @@ function updateTimer() {
 map.on('load', function(e) { // wait for map to be loaded
     $.get(bikeApiUrl, function(stations) {
         // add stations to source
-        /* build source
-           use geojson format
-           geojson structure example
-            {
-                "type": "FeatureCollection",
-                "features": [{
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [125.6, 10.  1]
-                    },
-                    "properties": {
-                        "name": "Dinagat Islands"
-                    }
-                }]
-            }
-            */
         var featuresList = []; // empty array of features
         // for each station
         stations.forEach(function(station) {
@@ -156,19 +139,19 @@ $("#play").click(function() {
 var playPause = document.getElementById("pause_play");
 
 pause.addEventListener("click", function() {
-  if (video.paused == true) {
-    // Play the video
-    video.play();
+    if (video.paused == true) {
+        // Play the video
+        video.play();
 
-    // Update the button text to 'Pause'
-    pause_play.classList.toggle('pause');
-  } else {
-    // Pause the video
-    video.pause();
+        // Update the button text to 'Pause'
+        pause_play.classList.toggle('pause');
+    } else {
+        // Pause the video
+        video.pause();
 
-    // Update the button text to 'Play'
-   pause_play.classList.toggle('pause');
-  }
+        // Update the button text to 'Play'
+        pause_play.classList.toggle('pause');
+    }
 });
 
 
@@ -220,22 +203,28 @@ $("#canvas").on("mousedown", function(e) { //canvas.addEventListener('mousedown'
     isDrawing = true;
 });
 
-$("#canvas").on("mousemove", function(e) {
+$("#canvas").on("mousemove", onmousemove);
+$("#canvas").on("touchmove", onmousemove);
+
+function onmousemove(e) {
     if(isDrawing === true) {
         drawLine(context, x, y, e.offsetX, e.offsetY);
         x = e.offsetX;
         y = e.offsetY;
         hasSigned = true;
     }
-});
-window.addEventListener('mouseup', e => {
+}
+
+window.addEventListener('mouseup',onmousestart);
+window.addEventListener('touchstart',onmousestart);
+function onmousestart(e) {
     if(isDrawing === true) {
         drawLine(context, x, y, e.offsetX, e.offsetY);
         x = 0;
         y = 0;
         isDrawing = false;
     }
-});
+}
 
 function drawLine(context, x1, y1, x2, y2) {
     context.beginPath();
@@ -285,7 +274,4 @@ if(sessionStorage.getItem('minutes') != null) {
     let minutes = sessionStorage.getItem('minutes');
     $('#minutes').html(minutes);
     var timerOn = setInterval(timer.decompte, 1000);
-};
-
-
-
+}
