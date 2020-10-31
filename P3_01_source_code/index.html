@@ -2,16 +2,19 @@
 <html lang="en">
 
 <head>
+
+
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Rent a B'cycle in the city of Brussels ">
+	<meta name="author" content="Charlotte M.F">
 	<title>Brussels's B'cycle:Bicycle rentals in Brussels</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 	<!-- MAIN STYLYSHEET-->
 
-	<link href='style/index.css' rel='stylesheet' />
+	<link href="style/index.css" rel="stylesheet"/>
 
 	<!--FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
@@ -23,45 +26,53 @@
 
            <!--  HEADER -->          
 
-		<header>
-			<div id="logohead"> <img src="carte_images/logo/logo.png" alt="LOGO DE B'CYCLE"> </div>
-			<div class="slogan">
-				<p> Rent a B'cycle, Bike the city </p>
-			</div>
-		</header>
-		<hr>
+		<header> 
 
+ 			<figure id="logohead">
+				<img src="carte_images/logo/logo.png" alt="B'CYCLE LOGO"/> 
+				<div>
+					<p> Rent a B'cycle, Bike the city </p>
+				</div>
+			</figure>
+		 	
+ 		</header>
+ 
 		<!--SECION ONE -->
-
 
 		<!--SLIDER DIAPORAMA-->
 		<section id="introduction">
-			<div class="sublogo"> <img src="carte_images/sublogo/display.png" alt="display image"> </div>
+			<div class="sublogo"> <img src="carte_images/sublogo/display.png" alt="this is the sublogo: an image of bruxelle ">
+			 </div>
 			<div class="introduction_title">
 				<h1>HOW B'CYCLE WORKS</h1>
-				<div class="introduction_line"></div>
-			</div>
+<!-- 				<div class="introduction_line"></div>
+ -->			</div>
 			<div class="slideshow-container">
-				<a class="previous"> <i class="fas fa-chevron-left"></i> </a>
-				<figure class="sliderimages active"> <img src="carte_images/slider/diaporama1.png" alt=“velos”/>
+				<a id="previous"> <i class="fas fa-chevron-left"></i></a>
+				<figure class="sliderimages active"> <img src="carte_images/slider/diaporama1.png" alt=
+				"this is a desciption image of how to rent a bicycle"/>
 					<figcaption>
 						<h3>1 -PICK A ZONE</h3>
 						<p class="c_text">Pick a zone to check for available bikes to rent. Enter first name and last name and click on reserve. </p>
 					</figcaption>
 				</figure>
-				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap2.png" alt="velos" />
+				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap2.png" alt="this image displays informations when you click on the pin " />
 					<figcaption>
 						<h3>2 - SIGNATURE & CONFIRMATION</h3>
 						<p class="c_text"> Click on the white box to sign,press save to cinfirm reservation or cancel to cancel signature and reservation.</p>
 					</figcaption>
 				</figure>
-				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap3.png" alt=“velos”/>
+				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap3.png" alt="this image diplays the informations once the bicycle has been reserved"/>
 					<figcaption>
 						<h3>3 - TIMER AFTER RESERVATION</h3>
 						<p class="c_text">Once reservation and confirmation has been done, you can proceed to getting a bicycle for a period of time.</p>
 					</figcaption>
-				</figure> <a class="next"><i class="fas fa-chevron-right"></i></a>
-				<div class="pause_play"> <i id="pause" class="fas fa-pause-circle"></i> <i id="play" class="fas fa-play-circle"></i> </div>
+				</figure>
+				<a id="next"><i class="fas fa-chevron-right"></i></a>
+				<div class="pause_play"> 
+					<i id="pause" class="fas fa-pause-circle"></i> 
+					<i id="play" class="fas fa-play-circle"></i> 
+				</div>
 			</div>
 		</section>
 
@@ -72,93 +83,135 @@
 
 		<!-- INTRO TEXT -->
 		<section id="velos_map">
-			<div class="introduction_title">
-				<h1>Map and stations</h1>
-				<h2>353 B'cycle stations available 24/7, just hop on!</h2> </div>
-
+			<div class="introduction_title_2">
+				<h1>MAP AND STATIONS</h1>
+				<h2><i>353 B'cycle stations available 24/7, just hop on!</i></h2> 	
+			</div>
+			<ul>
+				<li id="g_">+ 4 Bicycles</li>
+  				<li id="o_">1-3 Bicyles</li>
+  				<li id="r_">0 Bicycle</li>
+			</ul>
+			 
 			<!-- MAP -->
 
 			<div class="map_info">
-				<div class="map">
-					<div id="map"></div>
-				</div>
+				<div id ="map" class="map"></div>
 
-				<!-- INFORMATION  BOX -->
+ 			 
+ 				<div class="station-info">
+ 					<h3 class="table_Title">BIKE STATION INFORMATION</h3>
 
-				<aside class="station_velo">
-					<table class="table_">
-						<thead>
-							<tr>
-								<th colspan="2" class="table_Title">BIKE STATION INFORMATION</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Address</td>
-								<td id="address"></td>
-							</tr>
-							<tr>
-								<td>Available Bike stands</td>
-								<td id="available_bike_stands"></td>
-							</tr>
-							<tr>
-								<td>Available bikes</td>
-								<td id="available_bikes"></td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="instructions">
-						<div id="button">
-							<form id="signup_form">
-								<div class="informations"> <span>FIRST NAME:</span>
-									<input id="first_name" type="text" name="fname" pattern="[A-Za-z]{2,32}" required/>
-									<div class="text_error_fname">This field is required*</div>
-									<br> <span>SURNAME:</span>
-									<input id="last_name" type="text" name="lname" />
-									<br>
-									<div class="text_error_lname">This field is required*</div>
-								</div>
-								<input type="submit" id="buttonReserv" value="Reserve" /> </form>
+ 					<div class="info_text">
+						<i>Please select a station on the map to display the information for that station.</i>
+ 					</div>
+
+                	<p id="information_status" class="informations-stations">Status : 
+                	<span id="status" class="station-status"></span></p>
+
+                	<p class="informations-stations">Name of station :
+                	<span id="name" class="stations-status"></span></p>
+
+                	<p class="informations-stations">Address : 
+                	<span id="station_address" class="stations-status"></span></p>
+
+                	<p class="informations-stations">Available bike stand : 
+                	<span id="available_bike_stands" class="stations-status"></span></p>
+
+                	<p class="informations-stations">Available bikes: 
+                	<span id="available_bikes" class="stations-status"></span></p>
+
+                	<form id="signup_form">
+						<div class="informations"> <span>FIRST NAME:</span>
+							<input id="first_name" type="text" name="fname" pattern="[A-Za-z]{2,32}" required/>
+							<div class="text_error_fname">This field is required*</div>
+							<br> 
+							<span>SURNAME:</span>
+							<input id="last_name" type="text" name="lname" />
+							<br>
+							<div class="text_error_lname">This field is required*
+							</div>
+							<input type="submit" id="buttonReserv" value="Reserve"/>
 						</div>
-					</div>
-					<section>
-						<div class="canvas_info">
-							<h3>please sign here</h3> </div>
-						<canvas id="canvas"></canvas>
+					</form>
+					<div class="instructions">
+					<div id="button">
+						<div class="canvas_info"><h3>please sign here</h3></div>
+						<canvas id="canvas" width="200" height="150"></canvas>
 						<br>
 						<button id="buttonclear">Clear</button>
-						<button id="buttonsave">save</button>
-					</section>
-				</aside>
+						<button id="buttonsave">Save</button>
+						<button id="buttoncancel">Cancel</button>
+					</div>
+            	</div>			 
 			</div>
 		</section>
-		<br>
-
+ 
 		<!--FOOTER-->
-
-		<footer>
+		<section id="prefooter">
 			<div id="bicyleInfo"> <i class="fas fa-info-circle"></i>
 				<h2>Information on your reseration</h2>
+
 				<div id="timer">
 					<p id="compteur-reservation">Your reservation expires in <span id="minutes"></span>m<span id="seconds"></span>s</p>
+
+					<p class="informations-stations">Name of station :
+                	<span id="name" class="stations-status"></span></p>	 <!-- change the id = name of the person, --> 
+
 					<input type="reset" id="cancel_it" class="btn" value="Cancel" style=""> </div>
 			</div>
-			<div class="footer_info">
+			</div>
+			
+		</section>
+
+		<section id="prefooter" >
+			
+			<div class="prefooter_info">
 				<div class="alert_info"> <i class="fas fa-info-circle"></i>
 					<p><i>You have no reservation.
                 	</i></p>
-					<p><i>Fill the form to have reserve a b'cycle</i></p>
+					<p><i> Please select a station on the map to display the information for that station to reserve a b'cycle</i></p>
 				</div>
-				<div class="rights">All rights reserved © Joanah G 2020 - Formation Openclassrooms - Développeur Web Junior - Projet n°3 : Concevez une carte interactive de location de vélos </div>
 			</div>
+		</section>
+
+
+		<footer>
+			<p><i class="fas fa-info-circle"></i>Site non contractuel, réalisé dans le cadre d'une formation</p>
+			<p><i class="fas fa-balance-scale"></i><a href="#"> Mentions légales</a></p>
+			
+			<div> Retrouvez-nous également sur les réseaux sociaux :
+				<ul class="socialmedia">
+					<li>
+						<i class="fab fa-facebook-square"></i>
+						<a href="#">Facebook</a>
+					</li>
+					<li>
+						<i class="fab fa-twitter-square"></i>
+						<a href="#">Twitter</a>
+					</li>
+					<li>
+						<i class="fab fa-instagram"></i>
+						<a href="#">Instagram</a>
+					</li>
+				</ul>
+			</div>
+
 		</footer>
 
-		<!--FORM-->
+		<!--JAVASCRPT-->
+
 		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-		<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
-		<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
-		<script src="index.js"></script>
-	</div>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+		<script src="js/configuration.js"></script>	
+
+		<script src="js/index.js"></script>
+		<script src="js/canvas.js"></script>
+		<script src="js/slider.js"></script>
+		<script src="project_3_carte/P3_01_source_code/js/configuration.js"></script>	
+	
+ 	</div>
 </body>
 
 </html>
