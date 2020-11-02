@@ -25,7 +25,7 @@ map.addControl(new mapboxgl.NavigationControl());
 // map not to zoom while scrolling
   
 var maxMobileWidth = 768;   
-if(window.innerWidth <= maxMobileWidth) { // if width is lower or equal to number, disable zoom if mobile.do
+if(window.innerWidth >= maxMobileWidth) { // if width is lower or equal to number, disable zoom if mobile.do
     map.scrollZoom.disable();
 }
 
@@ -48,6 +48,7 @@ map.on('click',"locations", function(event) {
     $(".informations").css("display", "block");
     $(".info_text").css("display", "none");
     $(".station-info").css("display", "block");
+    // $("#prefooter").css("display","none");
 
     // $(".instructions").css("display","block");
 
@@ -70,6 +71,9 @@ map.on('click',"locations", function(event) {
     $('#available_bikes').html(available_bikes); 
 
     $(".informations").css("display", "block");
+
+    $(".noreserve_info").css("display", "none");
+
 
     canvas_signature.hide();
     canvas_info.hide();
@@ -167,21 +171,7 @@ $(document).ready(function() {
         nextSlide();
     });
 
-    // function previous() {
-    //     var sliderImages = $(".slideshow-container figure.sliderimages");
-    //     var current = $(".active");
-    //     var last = sliderImages[sliderImages.length - 1];
-    //     var first = sliderImages[0];
-    //     if(current[0] == first) { // if current image is first image
-    //         var previous = $(last); // go back to last image
-    //     } else {
-    //         var previous = $(".active").prev(".sliderimages"); // go to previous image
-    //     }
-    //     previous.addClass("active");
-    //     previous.removeClass("inactive");
-    //     current.removeClass("active");
-    //     current.addClass("inactive");
-    // }
+
     
 
         $("#previous").click(function() {
@@ -295,9 +285,8 @@ if(sessionStorage.getItem('minutes') != null) {
     let minutes = sessionStorage.getItem('minutes');
     $('#minutes').html(minutes);
     var timerOn = setInterval(timer.decompte, 1000);
+
 }
-
-
 
 //Get the button
 var mybutton = document.getElementById("myBtn");

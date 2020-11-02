@@ -4,11 +4,12 @@
 /* ==              FONTS          */
 /*---------------------------------------- */
 
-#logohead p,.caption, .slideshow-container h3,.c_text, .informations input ,.informations, .pause_play,td
+/* #logohead p,.caption, .slideshow-container h3,.c_text, .informations input ,.informations, .pause_play,td
 
 {
 	font-size: 20px;
-}
+} */
+
  
 body {
 /*    width: 100%;
@@ -34,12 +35,12 @@ body {
 background-color: #9ab9b952;
 }
 
- img , #logohead_img
-{
+ img
+ {
 	width: 100%;
 	height:auto;
 }
- 	#map {
+ 	#map{
  		width: 100%
  	}
 
@@ -51,9 +52,10 @@ background-color: #9ab9b952;
     /*     LOGO     */
 #logohead 
 {
-    text-align: center;
+	text-align: center;
+	margin: 0px;
     /* margin-bottom: 0px; */
-    margin-top: 0px;
+    /* margin-top: 0px; */
 }
  
 /*#logohead 
@@ -62,12 +64,12 @@ background-color: #9ab9b952;
     margin-bottom: 0px;
         margin-top: 36px;
  }*/
-/*
-#logohead img {
- 	
-   width: 30%;
 
- }*/
+ #logohead img {
+    width: 50%;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
   #logohead p
  {
  	margin: 4px;
@@ -79,13 +81,14 @@ header
 	position: fixed;
 	z-index: 20;
 	top: 0;
+	width: 100%;
 	height: auto;
 	border-bottom: 1px solid #e5e5e5;
 }
 
 #velo_map
 {
-	    padding-top: 24%;
+	padding-top: 24%;
     padding-bottom: 20px;
 }
 /* ---------------------------------------- */
@@ -93,11 +96,7 @@ header
 /*---------------------------------------- */
 /*    second      */
 
-/*#second_header {
-	padding-top: 300px;
-}
-*/
- #introduction
+#introduction
 {
 	display: none;
 }
@@ -111,20 +110,15 @@ header
 	text-shadow: 2px 2px 8px #fff;
 }
 
-.introduction_title  {
-		     	text-align: center;
-
-     margin: 15px;
- }
+.introduction_title {
+	text-align: center;	
+    margin: 15px;
+}
 
 .introduction_title h1{
     color: black;
     text-decoration: underline;
     margin: 16px;
-
-}
-
-margin-top: 134px;
     text-align: center;
 }
 
@@ -237,21 +231,20 @@ display: block;
 	border: 1px solid;
  	height: 60px;
 }
-ul
+#velos_map ul
 {
 	display: flex;
     list-style-type: none;
     justify-content: space-evenly;
     text-align: center;
     padding: 0px;
-    margin-top: 36px;
     /* margin: 0px; */
 }
 
 
 	/*position: fixed;
 	transform: translate(-50%,-50%);*/
-li {
+#velos_map li {
     display: block;
     width: 163px;
     height: 40px;
@@ -363,9 +356,9 @@ font-size: 16px;
  
 .info_text 
 {   
-	    font-size: 18px;
+	font-size: 18px;
     color: #f52b1b;
-    /* display: none; */
+    display: none;
     padding-top: 50px;
 }
  .station-info p
@@ -428,7 +421,10 @@ font-size: 16px;
 {
 	margin: 8px;
 }
-
+.information-station
+{
+	padding: 20px;
+}
  
 
 .informations {
@@ -500,18 +496,15 @@ footer {
 	color: white;
 	padding: 7px;
 	text-align: center;
-	display: flex;
-}
-footer li {
+	display:block;
+ }
 
-}
 footer ul 
 {
- 	display: flex;
+ 	display: inline-flex;
     list-style-type: none;
     text-align: center;
-    padding: 0px;
-    margin-top: 36px;
+	padding: 0px;
 }
 
 #cookie-banner {
@@ -576,15 +569,15 @@ footer ul
 
 {
 
-
-
-
 /* ---------------------------------------- */
 /* ==              HEADER               */
 /*---------------------------------------- */
 	
-
-	
+	#logohead p, .caption, .slideshow-container h3, .c_text,
+ 	.informations input, .informations, .pause_play, td 
+ 	{
+	font-size: 20px;
+	 }
 	/*#logohead img 
 	{
 	vertical-align: middle;
@@ -620,7 +613,7 @@ footer ul
     height: auto;
 	}*/
 
-/*
+	/*
 	.slogan p {
     font-size: 22px;
     margin: 3px;
@@ -720,37 +713,42 @@ footer ul
 	{
     position: relative ;
  	position: relative;
-	/*height: 672px;*/
-    width: 71%; 	
-}
+	 height: 600px;
+    /* width: 71%; 	 */
+	}
 
 
 	.map_info
 	{
-/*	width: 100%;
-*/    display: flex;
+	/*	width: 100%;
+	*/    display: flex;
     align-items: center;
     /* background-color: #d9e4e3; */
      margin: 0px;
         padding: 50px;
 
 	}
+	#map canvas {
+		width: 1094px;
+		height: 1000px;
 
-.mapboxgl-canvas
-{
-	 width: 801px;
-    height: 399px;
-}
+	}
+
+	/* .mapboxgl-canvas
+	{
+		width: 1094px;
+		height: 1000px;
+	} */
 
  .station-info
- {
+	{
  	background: #55a6b130;
     border-radius: 20px;
-     width: 37%; 
-     height: 409px;
+    width: 44%;
+    height: 403px;
     display: none;
 
-}
+	}
 
 	/*aside 
 	{
@@ -796,9 +794,4 @@ footer ul
 	color: #1b1a13;
 	border-bottom: solid;
 	}
- /*.station-info p
-  {
-  	display: none;
- }*/
-
 }
