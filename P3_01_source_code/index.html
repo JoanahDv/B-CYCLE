@@ -7,7 +7,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Rent a B'cycle in the city of Brussels ">
-	<meta name="author" content="Charlotte M.F">
+	<meta name="author" content="namelastname">
 	<title>Brussels's B'cycle:Bicycle rentals in Brussels</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -97,7 +97,7 @@
 
 			<div class="map_info">
 				<div id ="map" class="map"></div>
-				
+
  				<div class="station-info">
  					<h3 class="table_Title">BIKE STATION INFORMATION</h3>
 
@@ -139,6 +139,8 @@
 						<br>
 						<button id="buttonclear">Clear</button>
 						<button id="buttonsave">Save</button>
+						<button id="buttoncancel">Cancel</button>
+
  					</div>
             	</div>			 
 			</div>
@@ -159,17 +161,18 @@
 			<div id="bicyleInfo"> <i class="fas fa-info-circle"></i>
 				<h2>Information on your reseration</h2>
 				<div id="timer">
-					<p>Thank you!</p><br>
-					<p>Your b'cycle has been reserved.<br><span id="station-info"></span><br> In the station:<span id="station"></span></p>
+					<p>Thank you </p><strong><span id="user_name"></span></strong>
+					<p>Your b'cycle has been reserved in the station:<br><span id="user_station"></span></p>
  					<p id="compteur-reservation">Your reservation expires in <span id="minutes"></span>m<span id="seconds"></span>s</p>
                 	<p><span id="name_info" class="stations-status"></span></p>	 
-					<input type="reset" id="cancel_it" class="btn" value="Cancel"></div>
+					<input type="reset" id="cancel_it" class="btn" value="Cancel">
+				</div>
 			</div>			
 		</section>
 
 
 		<footer>
-			<p>Copyright ©2020 Joanah.This site is done within the context of a training course.</p>
+			<p>Copyright © 2020 name.This site is done within the context of a training course.</p>
 			<p><a href="#"> Mentions légales</a></p>
 			<p> Follow us on social media</p>
 				<ul class="socialmedia">
@@ -179,11 +182,11 @@
 					</li>
 					<li>
 						<i class="fab fa-twitter"></i>
-						<a href="#"></a>
+						<a href="https://twitter.com/login"></a>
 					</li>
 					<li>
 						<i class="fab fa-instagram"></i>
-						<a href="#"></a>
+						<a href="https://www.instagram.com/accounts/login/"></a>
 					</li>
 				</ul>
 			
@@ -195,11 +198,10 @@
 		<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
 		<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
 		<script src="js/configuration.js"></script>	
-		<script src="js/index.js"></script>
 		<script src="js/canvas.js"></script>
 		<script src="js/slider.js"></script>
-		<script src="js/configuration.js"></script>	
-	 
+		<script src="js/reservation.js"></script>
+		<script src="js/index.js"></script>
  	</div>
 </body>
 

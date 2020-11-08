@@ -5,8 +5,9 @@ var y = null; //rien
 var isDrawing = false;
 var clearCanvas = document.getElementById('buttonclear');
 var saveCanvas = document.getElementById('buttonsave');
+var cancelCanvas = document.getElementById("buttoncancel")
 var hasSigned = false;
-
+ 
 
 $("#canvas").on("mousedown",onmousestart);
 $("#canvas").on("touchstart",onmousestart);
@@ -83,6 +84,7 @@ $("#buttonsave").on("click", function() {
     var infoReservation = $("#bicyleInfo");
     var footerInfo = $(".footer_info");
     var timer = $("#timer");
+    var canvaInfo = $(".instructions");
     if(f_name == "" && l_name == "") { // if firstname is empty OR lastname is empty        
         text_error_fname.addClass("text_error_visible");
         text_error_lname.addClass("text_error_visible");
@@ -91,8 +93,17 @@ $("#buttonsave").on("click", function() {
         text_error_fname.removeClass("text_error_visible");
         text_error_lname.removeClass("text_error_visible");
         if(hasSigned === true) {
+            startTimer();
             infoReservation.show();
             footerInfo.hide();
+
         }
+
     }
 });
+
+// $("#buttoncancel").on("click", function() {
+//     $('.noreserve_info').css({'display': 'none'}
+//     )
+// });
+
