@@ -9,6 +9,29 @@ $("#last_name").val(l_name);
 // $('#user_name').html(address);
 
 
+$(document).ready(function() {
+    var slider = new Slider();
+
+    $("#next").click(function() {  
+        slider.pause();
+        slider.nextSlide();
+    });
+
+    $("#previous").click(function() {
+        slider.previousSlide();
+    });
+
+    //Pause Slider
+    $("#pause").click(function() {
+        slider.pause();
+    });
+
+    //Play Slider
+    $("#play").click(function() {
+        slider.play();
+    });
+});
+
 
 mapboxgl.accessToken =  mapAccessToken
 var map = new mapboxgl.Map({
@@ -16,7 +39,6 @@ var map = new mapboxgl.Map({
     style: mapStyle,
     center: [4.360625, 50.873156],
     zoom: 10
-
 });
 
 // Add zoom and rotation controls to the map.
@@ -147,6 +169,7 @@ map.on('load', function(e) { // wait for map to be loaded
                 // "icon-image": "bicycle-15",
                 'icon-image': ['match', ['get', 'available_bikes_str'], '0', 'bike-pin-red', '1', 'bike-pin-orange', '2', 'bike-pin-orange', '3', 'bike-pin-orange', 'bike-pin-green'],
                 "icon-allow-overlap": true,
+
             }
         });
         // add geojson to source, see mapbox documentation
@@ -167,7 +190,7 @@ $("#signup_form").on("submit", function(e) {
     var action_clear = $("#buttonclear");
     var action_save = $("#buttonsave");
     var action_cancel= $("#buttoncancel");
-    var action_reservation = $ (".station-info p")
+    var action_reservation = $(".station-info p");
     var station = $("#station_address").html();
 
     if(f_name == "" && l_name == "") { // if firstname is empty OR lastname is empty      
@@ -187,12 +210,18 @@ $("#signup_form").on("submit", function(e) {
         text_error_fname.removeClass("text_error_visible"); // remove texts
         text_error_lname.removeClass("text_error_visible");
         // display canvas for signature
+
         canvas_signature.show();
         canvas_info.show();
         action_clear.show();
         action_save.show();
         action_cancel.show();
         action_reservation.hide();
+        $('#prefooter').show    ();
+
+
+        
+        // $('#instructions').show();
         
         //saving names in localstorage
         localStorage.setItem("first_name", f_name);
@@ -200,6 +229,8 @@ $("#signup_form").on("submit", function(e) {
         localStorage.setItem("station_address" ,station);
         setReservationUsername();
         setUserStation();
+
+        
     }
 
 });
@@ -211,7 +242,7 @@ if(sessionStorage.getItem('minutes') != null) {  // if active reservation
     let minutes = sessionStorage.getItem('minutes');
     $("#minutes").html(minutes);
     startTimer(minutes, seconds);
-
+  
     // display timer
     $('#bicyleInfo').css({'display': 'block'});
     $('.noreserve_info').css({'display': 'none'});
@@ -230,8 +261,62 @@ function setUserStation() {
     $("#user_station").html(station);
 }
 
+function cancelReservation(){
+
+
+    var canvas_signature = $("#canvas");
+    var canvas_info = $(".canvas_info");
+    var action_clear = $("#buttonclear");
+    var action_save = $("#buttonsave");
+    var action_cancel= $("#buttoncancel");
+    var action_reservation = $(".station-info p");
+    
+
+    canvas_signature.hide();
+    canvas_info.hide();
+    action_clear.hide();
+    action_save.hide();
+    action_cancel.hide();
+    action_reservation.show();
+
+    $('#instructions').hide();
+        
+    //saving names in localstorage
+    localStorage.clear();
+    //sessionStorage.clear();
+    setTimertoZero();  
+        
+}
+
 //Get the button
 var mybutton = document.getElementById("myBtn");
+
+// CANCEL BUTTON
+
+$('#cancel_it').on('click', function() 
+{
+   
+    var canvas_signature = $("#canvas");
+    var canvas_info = $(".canvas_info");
+    var action_clear = $("#buttonclear");
+    var action_save = $("#buttonsave");
+    var action_cancel= $("#buttoncancel");
+    var action_reservation = $(".station-info p");
+
+    canvas_signature.hide();
+    canvas_info.hide();
+    action_clear.hide();
+    action_save.hide();
+    action_cancel.hide();
+    action_reservation.show();
+    localStorage.clear();
+    $("#user_station").html(" ");
+    console.log("cancel button on click");
+    $('#prefooter').hide();
+
+
+
+});
 
 // When the user scrolls down 20px from the top of the document, show the button
 // window.onscroll = function() {scrollFunction()};

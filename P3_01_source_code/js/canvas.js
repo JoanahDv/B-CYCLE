@@ -5,8 +5,11 @@ var y = null; //rien
 var isDrawing = false;
 var clearCanvas = document.getElementById('buttonclear');
 var saveCanvas = document.getElementById('buttonsave');
-var cancelCanvas = document.getElementById("buttoncancel")
+var cancelCanvas = document.getElementById("buttoncancel");
 var hasSigned = false;
+
+var instruction = document.getElementById('instructions');
+
  
 
 $("#canvas").on("mousedown",onmousestart);
@@ -101,6 +104,13 @@ $("#buttonsave").on("click", function() {
 
     }
 });
+//Button cancel 
+ $('#buttoncancel').on('click', function(){
+    $('#instructions').hide();
+    localStorage.clear();
+    
+ });
+
 
 // $("#buttoncancel").on("click", function() {
 //     $('.noreserve_info').css({'display': 'none'}

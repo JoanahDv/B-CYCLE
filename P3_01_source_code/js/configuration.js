@@ -6,3 +6,5 @@ var bikeApiUrl = "https://api.jcdecaux.com/vls/v1/stations?contract=bruxelles&ap
 // TIMER POUR LA RESERVATION
 var reservationTime = 20 * 60; // 20 minutes
 var reservationInterval = 1; // 1 second
+
+

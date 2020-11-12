@@ -17,6 +17,15 @@ function updateTimer() {
         alert("YOUR SESSION HAS EXPIRED.")
     }
 }
+
+// function setTimertoZero(){
+//     clearInterval(timerInterval);
+//     sessionStorage.removeItem('seconds');
+//     sessionStorage.removeItem('minutes');
+//     alert("YOUR SESSION HAS EXPIRED.")
+// }
+
+
 function startTimer(minutes, seconds) {
     if (minutes !== undefined && seconds !== undefined && reservationTime < 0) {  // call without parameters (on form save)
         reservationTime = parseInt(minutes) * 60 + parseInt(seconds);
@@ -27,7 +36,8 @@ var timerInterval;
 clearInterval(timerInterval);
 
 
-// Button cancel
-
+  
+//cancel button
 // function cancelReservation() {
-  var cancleReserve = $("#signup_form");
+//     var cancleReserve = $("#signup_form");
+// }
