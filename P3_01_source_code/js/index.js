@@ -116,11 +116,6 @@ $("#signup_form").on("submit", function(e) {
     var l_name = $("#last_name").val();
     var text_error_fname = $(".text_error_fname");
     var text_error_lname = $(".text_error_lname");
-    var canvas_signature = $("#canvas");
-    var canvas_info = $(".canvas_info");
-    var action_clear = $("#buttonclear");
-    var action_save = $("#buttonsave");
-    var action_cancel= $("#buttoncancel");
     var action_reservation = $(".station-info p");
     var station = $("#station_address").html();
 
@@ -142,13 +137,9 @@ $("#signup_form").on("submit", function(e) {
         text_error_lname.removeClass("text_error_visible");
         // display canvas for signature
 
-        canvas_signature.show();
-        canvas_info.show();
-        action_clear.show();
-        action_save.show();
-        action_cancel.show();
+        $(".instructions").show();
         action_reservation.hide();
-        $('#prefooter').show    ();
+        $('#prefooter').show();
         
         // $('#instructions').show();
         
@@ -190,18 +181,8 @@ function setUserStation() {
 }
 
 function cancelReservation(){
-    var canvas_signature = $("#canvas");
-    var canvas_info = $(".canvas_info");
-    var action_clear = $("#buttonclear");
-    var action_save = $("#buttonsave");
-    var action_cancel= $("#buttoncancel");
     var action_reservation = $(".station-info p");
 
-    canvas_signature.hide();
-    canvas_info.hide();
-    action_clear.hide();
-    action_save.hide();
-    action_cancel.hide();
     action_reservation.show();
     $('#instructions').hide();
     localStorage.clear();

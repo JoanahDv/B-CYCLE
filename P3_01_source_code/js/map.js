@@ -20,12 +20,6 @@ class MapWrapper {
     onClick(event) {
         // $("#boutonAnnuler").css("display", "none");
 
-        var canvas_signature = $("#canvas");
-        var canvas_info = $(".canvas_info");
-        var action_clear = $("#buttonclear");
-        var action_save = $("#buttonsave");
-        var action_cancel= $("#buttoncancel");
-
         var features = this.map.queryRenderedFeatures(event.point); // find features at coordinates
         //  
         $(".station-info p").css("display", "block");
@@ -53,11 +47,7 @@ class MapWrapper {
 
         $(".noreserve_info").css("display", "none");
 
-        canvas_signature.hide();
-        canvas_info.hide();
-        action_clear.hide();
-        action_save.hide();
-        action_cancel.hide();
+        $('#instructions').hide();
 
     }
 }

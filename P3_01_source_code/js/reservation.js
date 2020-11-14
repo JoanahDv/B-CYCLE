@@ -27,7 +27,7 @@ function setTimertoZero(){
 
 
 function startTimer(minutes, seconds) {
-    if (minutes !== undefined && seconds !== undefined && reservationTime < 0) {  // call without parameters (on form save)
+    if (minutes !== undefined && seconds !== undefined) {  // call without parameters (on form save)
         reservationTime = parseInt(minutes) * 60 + parseInt(seconds);
     }
     timerInterval = setInterval(updateTimer, reservationInterval * 1000); // update time every 1 second 
