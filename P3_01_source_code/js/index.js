@@ -32,96 +32,30 @@ $(document).ready(function() {
     });
 });
 
-
-mapboxgl.accessToken =  mapAccessToken
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: mapStyle,
-    center: [4.360625, 50.873156],
-    zoom: 10
-});
-
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
-
-
-// map not to zoom while scrolling
-  
-var maxMobileWidth = 768;   
-if(window.innerWidth >= maxMobileWidth) { // if width is lower or equal to number, disable zoom if mobile.do
-    map.scrollZoom.disable();
-}
-
-// add cluster to map
-
+var mapWrapper = new MapWrapper();
  
 //MAP MARKER
-map.on('click',"locations", function(event) {
-    // $("#boutonAnnuler").css("display", "none");
-
-    var canvas_signature = $("#canvas");
-    var canvas_info = $(".canvas_info");
-    var action_clear = $("#buttonclear");
-    var action_save = $("#buttonsave");
-    var action_cancel= $("#buttoncancel");
-
-    var features = map.queryRenderedFeatures(event.point); // find features at coordinates
-    //  
-    $(".station-info p").css("display", "block");
-    $(".informations").css("display", "block");
-    $(".info_text").css("display", "none");
-    $(".station-info").css("display", "block");
-    
-    var feature = features[0]; // select first feature
-    var status = feature.properties.status;
-    $('#status').html(status);
-
-    var name = feature.properties.name;
-    $('#name').html(name);
-
-    var address = feature.properties.address;
-    $('#station_address').html(address);
-
-    var available_bike_stands = feature.properties.available_bike_stands; // access marker properties
-    $('#available_bike_stands').html(available_bike_stands); // update html
-
-    var available_bikes = feature.properties.available_bikes;
-    $('#available_bikes').html(available_bikes); 
-
-    $(".informations").css("display", "block");
-
-    $(".noreserve_info").css("display", "none");
-
-
-    canvas_signature.hide();
-    canvas_info.hide();
-    action_clear.hide();
-    action_save.hide();
-    action_cancel.hide();
-
+mapWrapper.map.on('click',"locations", function(event) {
+   mapWrapper.onClick(event);
 });
 //  if click on save hide canvas
-   
-   
 //CURSOR FOR MOUSE
 
-map.on('mousemove', "locations", (e) => {
-  map.getCanvas().style.cursor = 'pointer';
+mapWrapper.map.on('mousemove', "locations", (e) => {
+    mapWrapper.map.getCanvas().style.cursor = 'pointer';
       // $("station-info").css("display", "block")
 });
 
-map.on("mouseleave", "locations", function() {
-  map.getCanvas().style.cursor = '';
+mapWrapper.map.on("mouseleave", "locations", function() {
+  mapWrapper.map.getCanvas().style.cursor = '';
 });
 
     // var info_title = feature.properties.info_title;  
     // $('#info_title').html(info_title);
-
-
 //SLIDER  DIAPORAMA
 $('#timer').css({'display': 'block'});
 
-map.on('load', function(e) { // wait for map to be loaded
+mapWrapper.map.on('load', function(e) { // wait for map to be loaded
     $.get(bikeApiUrl, function(stations) {
         // add stations to source
         var featuresList = []; // empty array of features
@@ -143,10 +77,7 @@ map.on('load', function(e) { // wait for map to be loaded
                     "available_bikes": station.available_bikes,
                     "available_bikes_str": String(station.available_bikes),
                     "status": station.status,
-                }
-
-                
-
+                }    
             });
         });
 
@@ -154,10 +85,10 @@ map.on('load', function(e) { // wait for map to be loaded
             "type": "FeatureCollection",
             "features": featuresList,
         };
-        map.addLayer({
+        mapWrapper.map.addLayer({
             "id": "locations",
             "type": "symbol",
-            
+
             
             /* Add a GeoJSON source containing place coordinates and information. */
             "source": {
@@ -218,8 +149,6 @@ $("#signup_form").on("submit", function(e) {
         action_cancel.show();
         action_reservation.hide();
         $('#prefooter').show    ();
-
-
         
         // $('#instructions').show();
         
@@ -232,7 +161,6 @@ $("#signup_form").on("submit", function(e) {
 
         
     }
-
 });
 
 if(sessionStorage.getItem('minutes') != null) {  // if active reservation
@@ -262,15 +190,12 @@ function setUserStation() {
 }
 
 function cancelReservation(){
-
-
     var canvas_signature = $("#canvas");
     var canvas_info = $(".canvas_info");
     var action_clear = $("#buttonclear");
     var action_save = $("#buttonsave");
     var action_cancel= $("#buttoncancel");
     var action_reservation = $(".station-info p");
-    
 
     canvas_signature.hide();
     canvas_info.hide();
@@ -278,44 +203,21 @@ function cancelReservation(){
     action_save.hide();
     action_cancel.hide();
     action_reservation.show();
-
     $('#instructions').hide();
-        
-    //saving names in localstorage
     localStorage.clear();
-    //sessionStorage.clear();
-    setTimertoZero();  
+    setTimertoZero();
+    $("#user_station").html(" ");
+    console.log("cancel button on click");
+    $('#prefooter').hide();  
         
 }
 
 //Get the button
 var mybutton = document.getElementById("myBtn");
 
-// CANCEL BUTTON
-
-$('#cancel_it').on('click', function() 
-{
-   
-    var canvas_signature = $("#canvas");
-    var canvas_info = $(".canvas_info");
-    var action_clear = $("#buttonclear");
-    var action_save = $("#buttonsave");
-    var action_cancel= $("#buttoncancel");
-    var action_reservation = $(".station-info p");
-
-    canvas_signature.hide();
-    canvas_info.hide();
-    action_clear.hide();
-    action_save.hide();
-    action_cancel.hide();
-    action_reservation.show();
-    localStorage.clear();
-    $("#user_station").html(" ");
-    console.log("cancel button on click");
-    $('#prefooter').hide();
-
-
-
+// cancel reservation
+$('#cancel_it').on('click', function() {
+    cancelReservation();
 });
 
 // When the user scrolls down 20px from the top of the document, show the button

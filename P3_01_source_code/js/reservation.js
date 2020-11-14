@@ -18,12 +18,12 @@ function updateTimer() {
     }
 }
 
-// function setTimertoZero(){
-//     clearInterval(timerInterval);
-//     sessionStorage.removeItem('seconds');
-//     sessionStorage.removeItem('minutes');
-//     alert("YOUR SESSION HAS EXPIRED.")
-// }
+function setTimertoZero(){
+    clearInterval(timerInterval);
+    sessionStorage.removeItem('seconds');
+    sessionStorage.removeItem('minutes');
+    alert("YOUR SESSION HAS EXPIRED.")
+}
 
 
 function startTimer(minutes, seconds) {
