@@ -379,20 +379,18 @@ footer {
 	text-align: center;
 	display: block;
 }
-footer ul {
-	display: inline-flex;
-	list-style-type: none;
-	text-align: center;
-	padding: 0px;
+.socialmedia {
+	display: flex;
+    list-style-type: none;
+    text-align: center;
+    padding: 0px;
+    justify-content: space-evenly;
 }
 #cookie-banner {
 	position: fixed;
 	bottom: 40px;
 	left: 10%;
 	right: 10%;
-	/*	width: 80%;
-	*/
-	
 	padding: 5px 14px;
 	display: flex;
 	align-items: center;
