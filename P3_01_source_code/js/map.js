@@ -19,7 +19,7 @@ class MapWrapper {
     }
     onClick(event) {
         // $("#boutonAnnuler").css("display", "none");
-
+        
         var features = this.map.queryRenderedFeatures(event.point); // find features at coordinates
         //  
         $(".station-info p").css("display", "block");
