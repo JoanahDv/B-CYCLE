@@ -5,8 +5,9 @@ $("#first_name").val(f_name);
 var l_name = localStorage.getItem("last_name");
 $("#last_name").val(l_name);
 
-// SLIDER
+var reservationTimer = new ReservationTimer();
 
+// SLIDER
 $(document).ready(function() {
     var slider = new Slider();
 
@@ -23,7 +24,7 @@ $(document).ready(function() {
     $("#pause").click(function() {
         slider.pause();
     });
-
+    
     //Play Slider
     $("#play").click(function() {
         slider.play();
@@ -38,22 +39,24 @@ var mapWrapper = new MapWrapper();
 mapWrapper.map.on('click',"locations", function(event) {
    mapWrapper.onClick(event);
 });
-//  if click on save hide canvas
-
 //CURSOR FOR MOUSE
-mapWrapper.map.on('mousemove', "locations", (e) => {
+ mapWrapper.map.on('mousemove', "bikelocationscluster", (e) => {
+    mapWrapper.map.getCanvas().style.cursor = 'pointer';
+ });
+ mapWrapper.map.on('mousemove', "locations", (e) => {
     mapWrapper.map.getCanvas().style.cursor = 'pointer';
  });
 
 mapWrapper.map.on("mouseleave", "locations", function() {
   mapWrapper.map.getCanvas().style.cursor = '';
 });
+mapWrapper.map.on("mouseleave", "bikelocationscluster", function() {
+    mapWrapper.map.getCanvas().style.cursor = '';
+  });
 
     // var info_title = feature.properties.info_title;  
     // $('#info_title').html(info_title);
-//SLIDER  DIAPORAMA
-$('#timer').css({'display': 'block'});
-
+ $('#timer').css({'display': 'block'});
 mapWrapper.map.on('load', function(e) { // wait for map to be loaded
     // make funtion 
     $.get(bikeApiUrl, function(stations) {
@@ -112,9 +115,9 @@ mapWrapper.map.on('load', function(e) { // wait for map to be loaded
             filter: ["has", "point_count"],
             paint: {
             
-                //   * teal, 20px circles when point count is less than 100
-                //   * Yellow, 30px circles when point count is between 100 and 750
-                //   * Pink, 40px circles when point count is greater than or equal to 750
+                //   * teal, 15px circles when point count is above 52
+                //   * Yellow, 3px circles when point count is between 27 and 23
+                //   * orange when its below 23.
                 'circle-color': [
                 'step',
                 ['get', 'point_count'],
@@ -208,7 +211,7 @@ if(sessionStorage.getItem('minutes') != null) {  // if active reservation
     $("#seconds").html(seconds);
     let minutes = sessionStorage.getItem('minutes');
     $("#minutes").html(minutes);
-    startTimer(minutes, seconds);
+    reservationTimer.startTimer(minutes, seconds);
   
     // display timer
     $('#bicyleInfo').css({'display': 'block'});
@@ -234,7 +237,7 @@ function cancelReservation(){
     action_reservation.show();
     $('#instructions').hide();
     localStorage.clear();
-    setTimertoZero();
+    reservationTimer.setTimertoZero();
     $("#user_station").html(" ");
     console.log("cancel button on click");
     $('#prefooter').hide();  
@@ -243,25 +246,10 @@ function cancelReservation(){
 
 //Get the button
 var mybutton = document.getElementById("myBtn");
-
 // cancel reservation
 $('#cancel_it').on('click', function() {
     cancelReservation();
-});
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    $(".station-info").hide();
 
-// When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function() {scrollFunction()};
-
-// function scrollFunction() {
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// }
-
-// // When the user clicks on the button, scroll to the top of the document
-// function topFunction() {
-//   document.body.scrollTop = 0;
-//   document.documentElement.scrollTop = 0;
-// }
+ });

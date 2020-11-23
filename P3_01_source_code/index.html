@@ -23,34 +23,60 @@
 					<p> Rent a B'cycle, Bike the city </p>
 				</div>
 			</figure>
+			<!-- <nav>
+				<ul>
+					<li><a href=".slideshow-container">Instructions</a></li>
+					<li><a href=".map_info">Rent a B'cycle</a></li>
+				</ul>
+			</nav> -->
 		</header>
 		<!--SECION ONE -->
 		<!--SLIDER DIAPORAMA-->
 		<section id="introduction">
-			<div class="sublogo"> <img src="carte_images/sublogo/display.png" alt="this is the sublogo: an image of bruxelle "> </div>
+			<div class="sublogo">
+				<img src="carte_images/sublogo/display.png" alt="this is the sublogo: an image of bruxelle "> 
+			</div>
 			<div class="introduction_title">
 				<h1>HOW B'CYCLE WORKS</h1>
 				<!-- <div class="introduction_line"></div>--></div>
 			<div class="slideshow-container">
 				<a id="previous"> <i class="fas fa-chevron-left"></i></a>
+
 				<figure class="sliderimages active"> <img src="carte_images/slider/diaporama1.png" alt="this is a desciption image of how to rent a bicycle" />
 					<figcaption>
 						<h3>1 -PICK A ZONE</h3>
-						<p class="c_text">Pick a zone to check for available bikes to rent. Enter first name and last name and click on reserve. </p>
+						<p class="c_text">Zoom on the map by using clicking on the coloured circle or using the manual + AND - to pick a zone and check for available bikes. </p>
 					</figcaption>
 				</figure>
-				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap2.png" alt="this image displays informations when you click on the pin " />
+
+				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap2.png" alt="this image displays informations to fill in when you click on the pin " />
 					<figcaption>
-						<h3>2 - SIGNATURE & CONFIRMATION</h3>
-						<p class="c_text"> Click on the white box to sign,press save to cinfirm reservation or cancel to cancel signature and reservation.</p>
+						<h3>2 - FILL IN THE RESERVATION</h3>
+						<p class="c_text"> Fill in the form on the location you wish to reserve a bicycle and click RESERVE.</p>
 					</figcaption>
 				</figure>
-				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap3.png" alt="this image diplays the informations once the bicycle has been reserved" />
+
+				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap3.png" alt="this image diplays a signature box to save the bicycles reservation" />
 					<figcaption>
-						<h3>3 - TIMER AFTER RESERVATION</h3>
+						<h3>3 - SIGNATURE</h3>
+						<p class="c_text">Once reservation is done, You can now sign finalize your reservation by signing in the signature box to save your reservation.</p>
+					</figcaption>
+				</figure>  
+
+				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap4.png" alt="this image diplays the timer once the bicycle has been reserved" />
+					<figcaption>
+						<h3>4  - TIMER AFTER RESERVATION</h3>
 						<p class="c_text">Once reservation and confirmation has been done, you can proceed to getting a bicycle for a period of time.</p>
 					</figcaption>
-				</figure> <a id="next"><i class="fas fa-chevron-right"></i></a>
+				</figure>
+				
+				<figure class="sliderimages inactive"> <img src="carte_images/slider/diap5.png" alt="this image diplays the informations when you run out of time to pick a bicyle" />
+					<figcaption>
+						<h3>5 -</h3>
+						<p class="c_text">After the amount of time given is up you can no longer reserve a b'cycle. A new reservation will be needed.</p>
+					</figcaption>
+				</figure>
+				<a id="next"><i class="fas fa-chevron-right"></i></a>
 				<div class="pause_play"> <i id="pause" class="fas fa-pause-circle"></i> <i id="play" class="fas fa-play-circle"></i> </div>
 			</div>
 		</section>
@@ -67,6 +93,9 @@
 				<li id="r_">0 Bicycle</li>
 			</ul>
 			<!-- MAP -->
+			<div class="infomap">
+				<h2>zoom in to find a location to reserve a bike</h2>
+			</div>
 			<div class="map_info">
 				<div id="map" class="map"></div>
 				<div class="station-info">
@@ -85,7 +114,8 @@
 							<input id="last_name" type="text" name="lname" />
 							<br>
 							<div class="text_error_lname">This field is required* </div>
-							<input type="submit" id="buttonReserv" value="Reserve" /> </div>
+							<input type="submit" id="buttonReserv" value="Reserve" /> 
+						</div>
 					</form>
 					<div class="instructions" id="instructions">
 						<div class="canvas_info">
@@ -121,18 +151,19 @@
 			</div>
 		</section>
 		<footer>
-			<p>Copyright © 2020 JOANAH.This site is done within the context of a training course.</p>
+			<p>Copyright © 2020 joanah.This site is done within the context of a training course.</p>
 			<p><a href="#"> Mentions légales</a></p>
 			<p> Follow us on social media</p>
 			<ul class="socialmedia">
-				<li> <i class="fab fa-facebook"></i>
-					<a href="https://www.facebook.com/"></a>
+				<li>
+					<a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+					
 				</li>
-				<li> <i class="fab fa-twitter"></i>
-					<a href="https://twitter.com/login"></a>
+				<li>  
+					<a href="https://twitter.com/"> <i class="fab fa-twitter"> </i></a>
 				</li>
-				<li> <i class="fab fa-instagram"></i>
-					<a href="https://www.instagram.com/accounts/login/"></a>
+				<li>
+					<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
 				</li>
 			</ul>
 		</footer>
@@ -142,10 +173,10 @@
 		<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
 		<script src="js/configuration.js"></script>
 		<script src="js/map.js"></script>
-		<script src="js/canvas.js"></script>
 		<script src="js/slider.js"></script>
-		<script src="js/reservation.js"></script>
+		<script src="js/reservationTimer.js"></script>
 		<script src="js/index.js"></script>
+		<script src="js/canvas.js"></script>
 	</div>
 </body>
 

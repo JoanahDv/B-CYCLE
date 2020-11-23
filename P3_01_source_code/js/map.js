@@ -19,35 +19,47 @@ class MapWrapper {
     }
     onClick(event) {
         // $("#boutonAnnuler").css("display", "none");
-        
+
         var features = this.map.queryRenderedFeatures(event.point); // find features at coordinates
-        //  
-        $(".station-info p").css("display", "block");
-        $(".informations").css("display", "block");
-        $(".info_text").css("display", "none");
-        $(".station-info").css("display", "block");
-        
         var feature = features[0]; // select first feature
-        var status = feature.properties.status;
-        $('#status').html(status);
-
-        var name = feature.properties.name;
-        $('#name').html(name);
-
-        var address = feature.properties.address;
-        $('#station_address').html(address);
-
-        var available_bike_stands = feature.properties.available_bike_stands; // access marker properties
-        $('#available_bike_stands').html(available_bike_stands); // update html
-
         var available_bikes = feature.properties.available_bikes;
-        $('#available_bikes').html(available_bikes); 
 
-        $(".informations").css("display", "block");
+        // if the bikes are more than 0 show details 
+        if (available_bikes > 0) {
+        
+            $(".station-info p").css("display", "block");
+            $(".informations").css("display", "block");
+            $(".info_text").css("display", "none");
+            $(".station-info").css("display", "block");
+            
+            var status = feature.properties.status;
+            $('#status').html(status);
 
-        $(".noreserve_info").css("display", "none");
+            var name = feature.properties.name;
+            $('#name').html(name);
+
+            var address = feature.properties.address;
+            $('#station_address').html(address);
+
+            var available_bike_stands = feature.properties.available_bike_stands; // access marker properties
+            $('#available_bike_stands').html(available_bike_stands); // update html
+
+            $('#available_bikes').html(available_bikes); 
+
+            $(".informations").css("display", "block");
+
+            $(".noreserve_info").css("display", "none"); 
+        }
+        // if not do not show details
+        else {
+            alert("No Bicycle available for reservation")
+        }
 
         $('#instructions').hide();
 
-    }
+    };
+ 
+    // if pin = 0 hide sign up form, let message show ( no bikes available for reservation)
+
+
 }

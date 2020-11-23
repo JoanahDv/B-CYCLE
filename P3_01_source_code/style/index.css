@@ -2,39 +2,35 @@
 /* ==              FONTS          */
 /*---------------------------------------- */
  
-body { 
+body 
+{ 
 	margin: 0px;
 	background-color: #5c88883b;
+	font-family: 'Open Sans', sans-serif;
+
 }
 
 .bloc_page {
 	margin: auto;
 	width: 100%;
 }
-/*sizes*/
 
 
 /* COLOUR*/
-
+/* 
 .map_info,
 .slideshow-container {
 	background-color: #9ab9b952;
-}
+} */
 
-img {
+img, #map {
 	width: 100%;
 	height: auto;
 }
 
-#map {
-	width: 100%
-}
-
-
 /* ---------------------------------------- */
 /* ==              HEADER               */
 /*---------------------------------------- */
-
 
 /*     LOGO     */
 
@@ -42,15 +38,15 @@ img {
 	text-align: center;
 	margin: 0px;
 }
-#logohead img {
+/* #logohead img {
 	width: 50%;
 	margin-top: 5px;
 	margin-bottom: 8px;
-}
+} */
 
-#logohead p {
+/* #logohead p {
 	margin: 4px;
-}
+} */
 
 header {
 	background-color: #ffffff;
@@ -67,15 +63,16 @@ header {
 	padding-bottom: 20px;
 }
 
+header a 
+{
+	text-decoration: none;
+	color: #5f5b5b;
+
+}
 
 /* ---------------------------------------- */
-
-
 /* ==       SECTION  	01			        */
-
-
 /*---------------------------------------- */
-
 
 /*    second      */
 
@@ -92,45 +89,42 @@ header {
 	text-shadow: 2px 2px 8px #fff;
 }
 
-.introduction_title {
+/* .introduction_title {
 	text-align: center;
 	margin: 15px;
-}
+} */
 
-.introduction_title h1 {
+/* .introduction_title h1 {
 	color: black;
 	text-decoration: underline;
 	margin: 16px;
 	text-align: center;
-}
+} */
 
 .introduction_title h2 {
 	margin: 0px;
 }
 
-.introduction_title_2 {
+.introduction_title_2 , .introduction_title{
 	color: white;
 	background-color: teal;
 	/*	margin-top: 55px;
 	add this to desktop
 	*/
+	margin-top: 100px;
 	padding: 1px;
-	margin-top: 37px;
+	margin-top: 4px;
 	text-align: center;
 }
-
-
 /*IMAGE SLIDER WITH CAPTION*/
 
 .inactive {
 	display: none;
 }
-
 .slideshow-container h3 {
 	padding-bottom: 4px;
 	line-height: 37px;
 }
-
 .mySlides1,
 .pause_play {
 	display: block;
@@ -160,13 +154,14 @@ header {
 	width: 100%;
 }
 
-.map_head_text {
+.map_head_text , .infomap{
 	text-align: center;
+	margin: 4px;
+
 }
 
 .mapboxgl-popup-content {
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
 }
 
 #available_bike_stands #available_bikes #status #address #name {
@@ -180,8 +175,7 @@ header {
 	justify-content: space-evenly;
 	text-align: center;
 	padding: 0px;
-	/* margin: 0px; */
-}
+ } 
 
 
 /*position: fixed;
@@ -248,12 +242,12 @@ li:hover:after {
 	border-collapse: collapse;
 }
 
-.map_info {
+/* .map_info {
 	align-items: center;
 	background-color: #f7f7f7;
 	margin: 9px;
 	border: 1px solid teal;
-}
+} */
 
 #maptable {
 	display: flex;
@@ -261,7 +255,17 @@ li:hover:after {
 	margin: 0px;
 	padding: 20px;
 }
-.table_Title {
+/*font-size: 16px; */
+.table_Title{
+    padding: 10px;
+    background-color: #fee274;
+    /* color: #1b1a13; */
+    border-bottom: solid;
+    /* border-radius: 30px; */
+    text-align: center;
+	margin: 0px;
+}
+/* .table_Title {
 	font-size: 16px;
 	padding: 10px;
 	background-color: #fee274;
@@ -270,7 +274,8 @@ li:hover:after {
 	border-bottom: solid;
 	border-radius: 30px;
 	text-align: center;
-}
+	margin: 0px;
+} */
 .info_text {
 	font-size: 18px;
 	color: #f52b1b;
@@ -319,6 +324,9 @@ li:hover:after {
 }
 .information-station {
 	padding: 20px;
+	padding-bottom: 20px;
+
+	
 }
 .informations {
 	/* 	padding-bottom: 40px;
@@ -330,9 +338,7 @@ li:hover:after {
 	display: block;
 }
 #signup_form {
-	background-color: #fee05d;
-	border-radius: 23px;
-	
+	background-color: #fee05d;	
 }
 #buttonReserv {
 	width: 34%;
@@ -367,24 +373,33 @@ li:hover:after {
 	color: #ff2c1d;
 	text-align: center;
 	padding: 10px;
+	background-color: #0080801f;
+
 }
 
 /* ---------------------------------------- */
 /* ==             FOOTER                    */
 /*---------------------------------------- */
-footer {
+footer, footer a {
 	background-color: #292929;
 	color: white;
 	padding: 7px;
 	text-align: center;
 	display: block;
 }
-.socialmedia {
+.socialmedia  {
 	display: flex;
     list-style-type: none;
     text-align: center;
     padding: 0px;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+.fab:hover {
+	background-color: blue;
+  }
+.socialmedia i {
+	font-size: x-large;
+	color: #faebd7;	  
 }
 #cookie-banner {
 	position: fixed;
@@ -448,17 +463,18 @@ footer {
 	/* ==              HEADER               */
 	/*---------------------------------------- */
 	
-	#logohead p,
+	/* #logohead p,
 	.caption,
 	.slideshow-container h3,
 	.c_text,
 	.informations input,
 	.informations,
 	.pause_play,
-	td {
+	td 
+	{
 		font-size: 20px;
 	}
-	
+	 */
 	#logohead img {
 		width: 30%;
 	}
@@ -570,7 +586,8 @@ footer {
 		align-items: center;
 		/* background-color: #d9e4e3; */
 		margin: 0px;
-		padding: 50px;
+		padding: 39px;
+		padding-top:0px;
 	}
 	
 	#map canvas {
@@ -578,13 +595,20 @@ footer {
 		height: 1000px;
 	}
 	 
-	.station-info {
-		background: #55a6b130;
-		border-radius: 20px;
+	/* .station-info {
+		background: #13616166;
+		 border-radius: 20px;
 		width: 44%;
 		height: 403px;
 		display: none;
-	} 
+	}  */
+	.station-info {
+		background: #eaeaea;
+		/* border-radius: 20px; */
+		width: 44%;
+		height: 403px;
+		display: none;
+	}
 	
 	.informations {
 		margin: 8px;

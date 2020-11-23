@@ -1,5 +1,5 @@
 class Slider {
-    timeCounter = 1000;
+    timeCounter = 5000;
     
     constructor() {
         this.sliderInterval = setInterval(this.nextSlide, this.timeCounter);
