@@ -1,66 +1,61 @@
-var canvas = document.getElementById('canvas');
-var context = canvas.getContext('2d');
-var x = null; //rien
-var y = null; //rien
-var isDrawing = false;
-var clearCanvas = document.getElementById('buttonclear');
-var saveCanvas = document.getElementById('buttonsave');
-var cancelCanvas = document.getElementById("buttoncancel");
-var hasSigned = false;
+class Canvas {
+    canvas = document.getElementById('canvas');
+    context = canvas.getContext('2d');
+     x = null; //rien
+     y = null; //rien
+     isDrawing = false;
+     clearCanvas = document.getElementById('buttonclear');
+     saveCanvas = document.getElementById('buttonsave');
+     cancelCanvas = document.getElementById("buttoncancel");
+     hasSigned = false;
+     instruction = document.getElementById('instructions');
 
-var instruction = document.getElementById('instructions');
-
- 
-
-$("#canvas").on("mousedown",onmousestart);
-$("#canvas").on("touchstart",onmousestart);
-
-
-function onmousestart(e) { //canvas.addEventListener('mousedown',e => {
-    var rect = e.target.getBoundingClientRect();
-    if (e.offsetX == undefined) {
-        x = e.changedTouches[0].pageX - rect.left;
-        y = e.changedTouches[0].pageY - rect.top;
-    } else {
-        x = e.offsetX;
-        y = e.offsetY;
+    constructor(){
+        $("#canvas").on("mousedown",this.onmousestart);
+        $("#canvas").on("touchstart",this.onmousestart);
+        $("#canvas").on("mousemove", this.onmousemove);
+        $("#canvas").on("touchmove", this.onmousemove);
+        window.addEventListener('mouseup',this.onmousestop);
+        window.addEventListener('touchend',this.onmousestop);
     }
 
-    isDrawing = true;
-};
-
-$("#canvas").on("mousemove", onmousemove);
-$("#canvas").on("touchmove", onmousemove);
-
-function onmousemove(e) {
-    var rect = e.target.getBoundingClientRect();
-    if(isDrawing === true) {
+    onmousestart(e) { //canvas.addEventListener('mousedown',e => {
+        var rect = e.target.getBoundingClientRect();
         if (e.offsetX == undefined) {
-            drawLine(context, x, y, e.changedTouches[0].pageX - rect.left, e.changedTouches[0].pageY - rect.top);
-            x = e.changedTouches[0].pageX - rect.left;
-            y = e.changedTouches[0].pageY - rect.top;
+            this.x = e.changedTouches[0].pageX - rect.left;
+            this.y = e.changedTouches[0].pageY - rect.top;
         } else {
-            drawLine(context, x, y, e.offsetX, e.offsetY);
-            x = e.offsetX;
-            y = e.offsetY;
+            this.x = e.offsetX;
+            this.y = e.offsetY;
+        }
 
-            hasSigned = true;
+        this.isDrawing = true;
+    }
+    onmousemove(e) {
+        var rect = e.target.getBoundingClientRect();
+        if(this.isDrawing === true) {
+            if (e.offsetX == undefined) {
+                drawLine(context, x, y, e.changedTouches[0].pageX - rect.left, e.changedTouches[0].pageY - rect.top);
+                this.x = e.changedTouches[0].pageX - rect.left;
+                this.y = e.changedTouches[0].pageY - rect.top;
+            } else {
+                drawLine(context, x, y, e.offsetX, e.offsetY);
+                this.x = e.offsetX;
+                this.y = e.offsetY;
+                this.hasSigned = true;
+            }
         }
     }
-}
-
-window.addEventListener('mouseup',onmousestop);
-window.addEventListener('touchend',onmousestop);
-function onmousestop(e) {
-    if(isDrawing === true) {
-        drawLine(context, x, y, e.offsetX, e.offsetY);
-        x = 0;
-        y = 0;
-        isDrawing = false;
+    onmousestop(e) {
+        if(this.isDrawing === true) {
+            drawLine(context, x, y, e.offsetX, e.offsetY);
+            this.x = 0;
+            this.y = 0;
+            this.isDrawing = false;
+        }
     }
-}
 
-function drawLine(context, x1, y1, x2, y2) {
+    drawLine(context, x1, y1, x2, y2) {
     context.beginPath();
     context.strokeStyle = 'black';
     context.lineWidth = 1;
@@ -68,7 +63,9 @@ function drawLine(context, x1, y1, x2, y2) {
     context.lineTo(x2, y2);
     context.stroke();
     context.closePath();
+    }
 }
+
 $("#buttonclear").on('click', function() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 });

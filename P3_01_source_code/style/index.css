@@ -15,14 +15,6 @@ body
 	width: 100%;
 }
 
-
-/* COLOUR*/
-/* 
-.map_info,
-.slideshow-container {
-	background-color: #9ab9b952;
-} */
-
 img, #map {
 	width: 100%;
 	height: auto;
@@ -38,15 +30,6 @@ img, #map {
 	text-align: center;
 	margin: 0px;
 }
-/* #logohead img {
-	width: 50%;
-	margin-top: 5px;
-	margin-bottom: 8px;
-} */
-
-/* #logohead p {
-	margin: 4px;
-} */
 
 header {
 	background-color: #ffffff;
@@ -88,18 +71,6 @@ header a
 	color: #fff;
 	text-shadow: 2px 2px 8px #fff;
 }
-
-/* .introduction_title {
-	text-align: center;
-	margin: 15px;
-} */
-
-/* .introduction_title h1 {
-	color: black;
-	text-decoration: underline;
-	margin: 16px;
-	text-align: center;
-} */
 
 .introduction_title h2 {
 	margin: 0px;
@@ -178,9 +149,6 @@ header a
  } 
 
 
-/*position: fixed;
-		transform: translate(-50%,-50%);*/
-
 #velos_map li {
 	display: block;
 	width: 163px;
@@ -242,26 +210,17 @@ li:hover:after {
 	border-collapse: collapse;
 }
 
-/* .map_info {
-	align-items: center;
-	background-color: #f7f7f7;
-	margin: 9px;
-	border: 1px solid teal;
-} */
-
 #maptable {
 	display: flex;
 	background-color: #e2e2e2;
 	margin: 0px;
 	padding: 20px;
 }
-/*font-size: 16px; */
+ 
 .table_Title{
     padding: 10px;
     background-color: #fee274;
-    /* color: #1b1a13; */
     border-bottom: solid;
-    /* border-radius: 30px; */
     text-align: center;
 	margin: 0px;
 }
@@ -269,7 +228,7 @@ li:hover:after {
 	font-size: 16px;
 	padding: 10px;
 	background-color: #fee274;
-	/* color: #1b1a13; */
+ 
 	
 	border-bottom: solid;
 	border-radius: 30px;
@@ -287,9 +246,7 @@ li:hover:after {
 }
 
 /* ---------------------------------------- */
-
 /* ==             CANVA                    */
-
 /*---------------------------------------- */
 .canvas_info h3 {
 	margin: 2px;
@@ -329,9 +286,6 @@ li:hover:after {
 	
 }
 .informations {
-	/* 	padding-bottom: 40px;
-	*/
-	
 	display: none;
 }
 #form {
@@ -462,19 +416,7 @@ footer, footer a {
 	/* ---------------------------------------- */
 	/* ==              HEADER               */
 	/*---------------------------------------- */
-	
-	/* #logohead p,
-	.caption,
-	.slideshow-container h3,
-	.c_text,
-	.informations input,
-	.informations,
-	.pause_play,
-	td 
-	{
-		font-size: 20px;
-	}
-	 */
+
 	#logohead img {
 		width: 30%;
 	}
@@ -566,26 +508,20 @@ footer, footer a {
 	/*---------------------------------------- */
 	
 	.map {
-		/*width: 60%; */
-		/* maps too large */
+	
 		border: 2px solid teal;
 		margin: 20px;
 	}
-	
 	#map {
 		position: relative;
 		position: relative;
 		height: 600px;
-		/* width: 71%; 	 */
-	}
-	
+ 	}
 	.map_info {
-		/*	width: 100%;
-		*/
+	 
 		display: flex;
 		align-items: center;
-		/* background-color: #d9e4e3; */
-		margin: 0px;
+ 		margin: 0px;
 		padding: 39px;
 		padding-top:0px;
 	}
@@ -594,18 +530,10 @@ footer, footer a {
 		width: 1094px;
 		height: 1000px;
 	}
-	 
-	/* .station-info {
-		background: #13616166;
-		 border-radius: 20px;
-		width: 44%;
-		height: 403px;
-		display: none;
-	}  */
+	  
 	.station-info {
 		background: #eaeaea;
-		/* border-radius: 20px; */
-		width: 44%;
+ 		width: 44%;
 		height: 403px;
 		display: none;
 	}
@@ -617,16 +545,10 @@ footer, footer a {
 	.informations input {
 	margin: 7px;
 	height: 21px;
-	/*    width: 145px;
-	*/
-	
 	font-size: 17px;
 	}
 	.table_Title {
 	margin: 0px;
-	/*	font-size: 26px;
-	*/
-	
 	padding: 10px;
 	background-color: #fee274;
 	color: #1b1a13;

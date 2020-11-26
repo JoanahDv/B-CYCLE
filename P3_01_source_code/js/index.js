@@ -32,7 +32,6 @@ $(document).ready(function() {
 });
 
 // MAP
-
 var mapWrapper = new MapWrapper();
  
 //MAP MARKER
@@ -158,8 +157,6 @@ mapWrapper.map.on('load', function(e) { // wait for map to be loaded
     });
 });
 
-
-
 //FORM
 $("#signup_form").on("submit", function(e) {
     e.preventDefault();
@@ -204,7 +201,6 @@ $("#signup_form").on("submit", function(e) {
         
     }
 });
-
 if(sessionStorage.getItem('minutes') != null) {  // if active reservation
     // resume timer
     let seconds = sessionStorage.getItem('seconds');
